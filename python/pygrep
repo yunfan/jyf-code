@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+# coding: utf-8
+# File: pygrep
+# Date: 2010-04-23
+# Author: jyf<jyf1987@gmail.com>
+
+import sys
+import re
+import os
+
+if 3 > len(sys.argv):
+    print >> sys.stderr, "params leak"
+    sys.exit(0)
+
+fn = sys.argv[1]
+rc = sys.argv[2]
+
+print >> sys.stderr, "we get the target filename: %s" % fn
+
+filter = re.compile(rc, re.DOTALL)
+if not filter:
+    print >> sys.stderr, "your patten is not a valid regex code"
+    sys.exit(0)
+
+fp = open(fn, "rb")
+
+l = 0
+lstr = fp.readline()
+
+while lstr:
+    if filter.search(lstr):
+        print >> sys.stdout, "Find it\nfilename: %s\nlinenum: %d\n\n" % ( fn, l )
+    l += 1
+    lstr = fp.readline()
+

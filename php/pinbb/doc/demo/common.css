@@ -1,0 +1,38 @@
+html *{margin:0px;padding:0px;font-size:12px;}
+    p{margin:0px;padding:0px 3px;}
+    a.no-under-line{/**/text-decoration:none;/**/}
+	a.split{margin:0px 5px;}
+    p.h3{font-size:20px;font-weight:600;}
+	body{*text-align:center;}
+	body *{text-align:left;}
+    #header{margin:5px auto;width:96%;height:74px;*height:66px;border:1px solid #788059;background-color:#E1E6CF;}
+      #h-1{background-color:#ACBF60;border:none;width:100%;height:7px;margin:0px;padding:0px;*font-size:6px;}
+      #h-2{}
+      #h-3{margin:10px 0px 0px 0px;padding:0px;background-color:#ACBF60;border:none;width:100%;height:20px;}
+        #h-3 ul{list-style:none;margin:0px;padding:0px;}
+          #h-3 ul li{float:left;margin:0px 7px 0px 3px;padding:3px 0px;}
+          #h-3 ul li a{color:white;}
+    #main{margin:5px auto;padding:10px;width:96%;/**border:1px solid #788059;background-color:#E1E6CF;/**/text-align:center;}
+	  #main *{text-align:default;}
+      .box{margin:10px auto;padding:0px;width:96%;display:block;}
+      .boxhead{margin:0px;padding:0px;background-color:#ACBF60;color:white;}
+	  .boxbottom{margin:0px;padding:0px 10px;border:1px solid #788059;border-top:none;}
+	.box table{display:table;width:100%;border-left:1px solid #788059;}
+	.box table td.fsttd,.box table td.lsttd{text-align:left;padding-left:10px;}
+	.box table thead td{border-bottom:1px solid #788059;}
+	  .box table thead td.fsttd{width:70%;}
+	  .box table thead td.lsttd{border-right:1px solid #788059;width:20%;}
+	.box table tbody td{border-right:1px solid #788059;border-bottom:1px solid #788059;text-align:center;}
+	.form{margin:10px auto;padding:0px;width:96%;display:block;}
+	.form table td.fsttd,.box table td.lsttd{text-align:left;padding-left:10px;}
+	
+	.formhead{margin:0px;padding:0px;background-color:#ACBF60;color:white;}
+		.form form{width:100%;}
+		.form table{width:100%;border-left:1px solid #788059;}
+		.form table td{border-bottom:1px solid #788059;border-right:1px solid #788059;padding:0px 10px;}
+			.form table tbody td.fsttd{width:20%;}
+			.form table tbody td.lsttd{border-right:1px solid #788059;width:80%;}
+    #footer{margin:5px auto;width:96%;min-height:16px;border:1px solid #788059;background-color:#E1E6CF;}
+	.split_4{width:48px;display:block;}
+	.text-align-right{text-align:right;color:red;}
+/*中文*/

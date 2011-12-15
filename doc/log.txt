@@ -1,0 +1,210 @@
+<presence from="50067806@talk.xiaonei.com/WTalkProxy6_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901">
+    <priority>0</priority>
+    <status>她们做出来的东西真令我震撼！就想找条地缝钻下去！！</status>
+    <nick xmlns="http://jabber.org/protocol/nick">胡文斐</nick>
+    <x xmlns="vcard-temp:x:update">
+        <PHOTO>
+            <EXTVAL>http://head.xiaonei.com/photos/20070225/2100/head3620691.jpg</EXTVAL>
+        </PHOTO>
+    </x>
+    <c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" />
+</presence>
+
+<presence from="80288196@talk.xiaonei.com/TalkProxy2_12553900935202" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901">
+    <priority>0</priority>
+    <status>again</status>
+    <nick xmlns="http://jabber.org/protocol/nick">江云帆</nick>
+    <x xmlns="vcard-temp:x:update">
+        <PHOTO>
+            <EXTVAL>http://hdn311.xnimg.cn/photos/hdn311/20090720/2310/head_b8Xv_33486f204234.jpg</EXTVAL>
+        </PHOTO>
+    </x>
+    <c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="" ext="" />
+</presence>
+
+<presence from="80288196@talk.xiaonei.com/TalkProxy2_12553900996302" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>again</status>
+<nick xmlns="http://jabber.org/protocol/nick">江云帆</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn311.xnimg.cn/photos/hdn311/20090720/2310/head_b8Xv_33486f204234.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="" ext="" /></presence>
+<presence from="80288196@talk.xiaonei.com/TalkProxy2_12553902139502" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>again</status>
+<nick xmlns="http://jabber.org/protocol/nick">江云帆</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn311.xnimg.cn/photos/hdn311/20090720/2310/head_b8Xv_33486f204234.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="" ext="" /></presence>
+<presence from="80288196@talk.xiaonei.com/TalkProxy2_12553910361102" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>again</status>
+<nick xmlns="http://jabber.org/protocol/nick">江云帆</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn311.xnimg.cn/photos/hdn311/20090720/2310/head_b8Xv_33486f204234.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="2.5.5" ext="moodn nickn tunen avatar" /></presence>
+<presence from="128487631@talk.xiaonei.com/WTalkProxy1_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>刷副本升级就是快</status>
+<nick xmlns="http://jabber.org/protocol/nick">张铁安</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn211.xnimg.cn/photos/hdn211/20090409/23/55/head_i0VJ_27519h204236.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="194757355@talk.xiaonei.com/WTalkProxy5_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>冬天就要过去了</status>
+<nick xmlns="http://jabber.org/protocol/nick">张少强</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hd46.xiaonei.com/photos/hd46/20081017/23/44/head_1hGQ_3988l200150.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="221045613@talk.xiaonei.com/WTalkProxy3_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>一切都在朝着好的方向发展   真好    大家为各自的梦想努力着       希望我的创意能带来更多的机会     大家加油</status>
+<nick xmlns="http://jabber.org/protocol/nick">孟威</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn601.xnimg.cn/photos/hdn601/20090101/18/30/head_JqY7_10789o198107.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="221529142@talk.xiaonei.com/WTalkProxy2_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>奋发涂墙</status>
+<nick xmlns="http://jabber.org/protocol/nick">葛夏</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn411.xnimg.cn/photos/hdn411/20090421/0445/head_dcuA_69086p204234.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="222154404@talk.xiaonei.com/WTalkProxy4_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>长久以为一直想尝试一下在超市里买东西然后不花钱然后报警的东西会不会响~~结果今天做到了~哈哈</status>
+<nick xmlns="http://jabber.org/protocol/nick">趙山江조산강</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn.xnimg.cn/photos/hdn121/20090924/1900/head_8mtW_41653e019116.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="222281589@talk.xiaonei.com/WTalkProxy9_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>查了一下gmail的垃圾邮件箱，有230多封邮件，这是一个月的量。正常邮件是这个的一成还不到。</status>
+<nick xmlns="http://jabber.org/protocol/nick">王红军</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn411.xnimg.cn/photos/hdn411/20090312/15/15/head_gFJa_19304b204235.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="223011571@talk.xiaonei.com/WTalkProxy1_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>(v)</status>
+<nick xmlns="http://jabber.org/protocol/nick">戴清如</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn211.xnimg.cn/photos/hdn211/20090620/1450/head_Z8SA_27937a204237.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="223222034@talk.xiaonei.com/WTalkProxy4_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>要知道，那一块猪猪鬼脸蛋糕的意义</status>
+<nick xmlns="http://jabber.org/protocol/nick">任振</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hd41.xiaonei.com/photos/hd41/20080224/13/55/head_2698d107.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="223372832@talk.xiaonei.com/WTalkProxy2_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>http://singer.xiaonei.com/detail.jsp?uid=239480535 帮我妹投个票，谢谢大家了！！</status>
+<nick xmlns="http://jabber.org/protocol/nick">孟夷光</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hd30.xiaonei.com/photos/hd30/20070725/09/26/head_451d76.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="224778071@talk.xiaonei.com/WTalkProxy1_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>重大发现微软的VISTA以及W7有两大BUG，打开该操作系统的计算器，第一个是你用9216除以96时，按=竟然没反映。第二个更有意思，当你用24000除以96的时候，计算机显示的竟然是你名字 赶快试试吧</status>
+<nick xmlns="http://jabber.org/protocol/nick">申林๑۩۞۩๑</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn411.xnimg.cn/photos/hdn411/20090818/2235/head_qx35_18981h204234.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="224939993@talk.xiaonei.com/WTalkProxy3_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>真想找地方撞死得了，十一月初才能拿到九十两月的工资</status>
+<nick xmlns="http://jabber.org/protocol/nick">王蕴之</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn411.xnimg.cn/photos/hdn411/20090313/22/05/head_Q6S2_44678l204238.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="227228410@talk.xiaonei.com/WTalkProxy0_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>练毛笔字，拉二胡，吹笛子，弹吉他</status>
+<nick xmlns="http://jabber.org/protocol/nick">吴盈</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hd10.xiaonei.com/photos/hd10/20070705/11/19/head_1998o178.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="227389444@talk.xiaonei.com/WTalkProxy4_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>好！</status>
+<nick xmlns="http://jabber.org/protocol/nick">王浩★sreay</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn211.xnimg.cn/photos/hdn211/20090806/2250/head_2V1m_7108d204237.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="227763275@talk.xiaonei.com/WTalkProxy5_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>再也没必要买篮球鞋了，不甘啊</status>
+<nick xmlns="http://jabber.org/protocol/nick">张经纬</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn411.xnimg.cn/photos/hdn411/20090617/1750/head_o85U_130994i204235.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="228217041@talk.xiaonei.com/WTalkProxy1_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>你怎么天天那麽高兴啊，跟屁崩的似的 （老铁的“赞扬）:d:-p(晕)</status>
+<nick xmlns="http://jabber.org/protocol/nick">高旋</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn111.xnimg.cn/photos/hdn111/20090817/1720/head_GHBs_53730d204237.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="230302413@talk.xiaonei.com/WTalkProxy3_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>151 1904 1785 惠州手机号 认识的朋友记下 杭州号不用了</status>
+<nick xmlns="http://jabber.org/protocol/nick">石翔</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hd51.xiaonei.com/photos/hd51/20080606/20/55/head_6692i107.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="234477753@talk.xiaonei.com/TalkProxy2_12553906964202" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>30集电视剧《大明徽商》初稿进行中……</status>
+<nick xmlns="http://jabber.org/protocol/nick">叶吉徽</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn211.xnimg.cn/photos/hdn211/20090615/1840/head_Iiwi_9723f204236.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="3.514" ext="share-v1" /></presence>
+<presence from="235757299@talk.xiaonei.com/WTalkProxy9_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status>年轻就是资本！</status>
+<nick xmlns="http://jabber.org/protocol/nick">嘉伟</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn411.xnimg.cn/photos/hdn411/20090729/2330/head_OyON_41419g204236.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<presence from="268270573@talk.xiaonei.com/WTalkProxy3_0" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><priority>0</priority>
+<status></status>
+<nick xmlns="http://jabber.org/protocol/nick">郭锦辉</nick>
+<x xmlns="vcard-temp:x:update"><PHOTO><EXTVAL>http://hdn311.xnimg.cn/photos/hdn311/20090830/2120/head_dKIJ_51885a204236.jpg</EXTVAL>
+</PHOTO>
+</x>
+<c xmlns="http://jabber.org/protocol/caps" node="http://talk.xiaonei.com/xmpp/client/caps" ver="webpager" ext="" /></presence>
+<message type="common" from="feed.talk.xiaonei.com@feed.talk.xiaonei.com" to="80288196@talk.xiaonei.com/TalkProxy1_12553911417901"><subject>新鲜事</subject>
+<body /><xfeed xmlns="http://talk.xiaonei.com/xfeed"><id>6000125577837360180</id>
+<actor>80288196</actor>
+<time>1255778373</time>
+<type>5</type>
+<typen /><stype>502</stype>
+<stypen /><resource>4894286895892846708</resource>
+<merge>1</merge>
+<f><title>again</title>
+<dID>847960180</dID>
+<dtime>1255778373850</dtime>
+<time>1255778373852</time>
+<type>502</type>
+<biz>847960180_502_80288196</biz>
+<h>hdn411/20090720/2315/tiny_X3vn_32706a204234.jpg</h>
+<from><fID>80288196</fID>
+<fName>江云帆</fName>
+</from>
+</f>
+<tpl>
+<icon>http://xnimg.cn/imgpro/icons/status.gif</icon>
+<src>
+[r100 [^http://xiaonei.com/profile.do?id={{from_fID:x-q}}^ {{from_fName:x-h}}]：{{title:x-h}}_[^http://xiaonei.com/getdoing.do?id={{from_fID:x-q}}^ 回复]_{{#wap}}@@_aic:12&amp;12{{_:x-Rs=0 0 0 xnimg.cn/img/mobile-intro/tinymobile.gif www.xiaonei.com/mobile/web.do}}{{/wap}}]
+</src>
+<src2>
+[r100 [^http://xiaonei.com/profile.do?id={{from_fID:x-q}}^ {{from_fName:x-h}}]：{{title:x-h}}_{{#wap}}@@_aic:12&amp;12{{_:x-Rs=0 0 0 xnimg.cn/img/mobile-intro/tinymobile.gif www.xiaonei.com/mobile/web.do}}{{/wap}}]
+</src2>
+</tpl>
+<reply_tpl>{{TL}}1:200:1~^ @@_aic:30&amp;30{{_:x-Rs=30 0 -2}}{{tu:x-rs}}{{_:x-R=  renren.com/profile.do?id=}}{{ui:x-rs}}:: [l250 [^http://renren.com/profile.do?id={{ui:x-q}}^ {{un:x-h}}]_[@(128) {{rt:x-time}}]&amp;{{hcon:x-h}}{{#NOT_SELF}}_[^xn://replytofeed/{{ui:x-q}}|{{un:x-h}}^ 回复]_{{/NOT_SELF}}]:: _{{TR}}</reply_tpl></xfeed></message>
+
+[ 2010-03-11 15:1146  ] clean cash
+[ 2010-03-12 13:2242  ] 笑不出来,也没了泪水

@@ -1,0 +1,49 @@
+---- 事件流水表
+DROP TABLE IF EXISTS events;
+CREATE TABLE events (
+    event_id integer NOT NULL,
+    event_type integer NOT NULL,
+    event_from varchar(255) NOT NULL,
+    event_level integer NOT NULL,
+    owner integer NOT NULL,
+    occur_time integer NOT NULL,
+    extra TEXT NOT NULL,
+    primary key (event_id)
+);
+
+---- 事件的类型
+DROP TABLE IF EXISTS event_types;
+CREATE TABLE event_types (
+    type_id integer NOT NULL,
+    type_name varchar(255) NOT NULL,
+    type_desc TEXT DEFAULT NULL,
+    primary key (type_id)
+);
+
+---- 系统内用户
+DROP TABLE IF EXISTS event_owners;
+CREATE TABLE event_owners (
+    owner_id integer NOT NULL,
+    name varchar(255) NOT NULL,
+    extra TEXT DEFAULT NULL,
+    primary key (owner_id)
+);
+
+---- 事件tag表
+DROP TABLE IF EXISTS event_tags;
+CREATE TABLE event_tags (
+    event_id integer NOT NULL,
+    tag_name varchar(64) NOT NULL
+);
+
+---- owner 是否有发送某类型的event的权限表
+DROP TABLE IF EXISTS event_priv;
+CREATE TABLE event_priv (
+    owner_id integer NOT NULL,
+    type_id integer NOT NULL
+);
+
+CREATE INDEX owner_to_type on event_priv (owner_id);
+
+CREATE INDEX event_to_tag on event_tags (event_id);
+CREATE INDEX tag_to_event on event_tags (tag_name);

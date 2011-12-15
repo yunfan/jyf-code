@@ -1,0 +1,3 @@
+密码和标题可以自由修改
+但是要注意保存为utf-8 无bom格式
+安装请访问 index.php?mod=install

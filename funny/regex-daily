@@ -1,0 +1,124 @@
+[2009-09-29]
+vim | :122,134s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in gk:\r\1\1gp.\2 = GROUP["\2"]\r\1\1ct = ct + 1\r/ig
+vim | :292,309s/\s\+"\([^"]\+\)",/gl.\1,/ig
+vim | :69,74s/"\([^"]\+\)",/        if "\1" in method:\r            return \1(*params)\r/ig
+vim | :134,141s/\(\s\+\)\([^ ]\+\)\s[^,]\+,/\1"\2",/ig
+vim | :428,435s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in mk:\r\1\1mr.\2 = MEMBER["\2"]\r\1\1ct = ct+ 1\r/ig
+vim | :497,502s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in mk:\r\1\1wheres.append( """ \2 = '%s' """ % ( MEMBER["\2"] ) )\r/ig
+vim | :497,510s/wheres/sets/ig
+
+[2009-10-09]
+vim | :614,618s/\(.\+\)/    if "\1" in mk:\r        sets.append(""" gm.\1='%s'""" % (MEMBER["\1"]))\r/ig
+vim | :s/\([^.]\+\)\.\([^,]\+\)/    "\2",\r/ig
+vim | :582,590s/\([^,]\+\)/gm.\1/ig
+vim | :582,590s/\s\+\([^ ]\+\)\s[^,]\+/\1/ig
+vim | :87,90s/\s\+\([^ ]\+\)/        if "\1" in method:\r            return \1(*params)\r/ig
+
+[2009-10-10]
+vim | :1088,1089s/group_id/parent_id/ig
+vim | :1085,1086s/group_id/user_id/ig
+vim | :1061,1069s/\(\s\+\)"\([^"]\+\)"/gt.\2/ig
+vim | :221,229s/\(\s\+\)\([^ ]\+\).\+/\1"\2",/ig
+vim | :935,942s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in tk:\r\1\1tp.\2 = TOPIC["\2"]\r\1\1ct = ct + 1\r/ig
+vim | :935,942s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in tk:\r\1\1tp.\2 = TOPIC["\2"]\r\1\1ct = ct + 1/ig
+vim | :208,215s/\(\s\+\)\([^ ]\+\).\+/\1"\2",/ig
+vim | :75,79y
+vim | :614,618s/\(.\+\)/    if "\1" in mk:\r        sets.append(""" gm.\1='%s'""" % (MEMBER["\1"]))\r/ig
+
+[2009-10-14]
+vim | :1532,1539s/"\([^"]\+\)",/def \1():\r\r/g
+vim | :148,162s/\(\s\+\)\(.\+\)/\1\1if "\2" in method:\r\1\1\1return \2(*params)\r/g
+vim | :147,171s/^[0-9].\+//g
+vim | :1468,1474s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in fk:\r\1\1file.\2 = FILE["\2"]\r\1\1ct = ct + 1\r/g
+vim | :276,282s/\(\s\+\)\([^ ]\+\)\s[^,]\+/\1"\2"/ig
+vim | :1461,1505s/ak/fk/g
+vim | :1461,1505s/ALBUM/FILE/g
+vim | :1461,1505s/album/file/g
+vim | :1419,1451s/gt/gp/ig
+vim | :1419,1451s/tk/ak/ig
+vim | :1419,1451s/tk./ak./ig
+vim | :1419,1451s/TOPIC/ALBUM/ig
+vim | :1365,1375s/gt/gp/ig
+vim | :1365,1375s/tk/ak/ig
+vim | :1365,1375s/TOPIC/ALBUM/ig
+vim | :1130,1140s/TOPIC/ALBUM/ig
+vim | :1344,1352s/\s\+"\([^"]\+\)"/gp.\2/ig
+vim | :1221,1228s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in ak:\r\1\1album.\2 = ALBUM["\2"]\r\1\1ct = ct + 1\r/ig
+vim | :242,249s/\(\s\+\)\([^ ]\+\)[^,]\+,/\1"\2"/ig
+vim | :1180,1181s/group_id/parent_id/ig
+vim | :1166,1173s/\(\s\+\)\([A-Za-z]\+\)/def \2():\r/ig
+vim | :1166,1173s/\(\s\+\)\(.\+\)/def \1():\r/ig
+vim | :1166,1173s/\(\s\+\)\([a-zA-Z]\+\)/def \1():\r/ig
+vim | :99,114s/"\([^"]\+\)",/        if "\1" in method:\r            return \1(*params)\r/ig
+vim | :1118,1133s/^[0-9]\+,[^:]\+://ig
+
+[2009-10-15]
+
+Vim | :2010,2015s/\s\+"\([^"]\+\)"/\1/g
+Vim | :2010,2015s/\s\+"\([^"]\+\)"/\2/g
+Vim | :1881,1884s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in sk:\r\1\1space.\2 = SPACE["\2"]\r\1\1ct = ct + 1\r/g
+Vim | :1871,1906s/log/space/g
+Vim | :1871,1906s/lk/sk/g
+Vim | :1871,1906s/LOG/SPACE/g
+Vim | :332,336s/\(\s\+\)\([^ ]\+\)[^,]\+/\1"\2"/ig
+Vim | :328,353s/LOG/SPACE/g
+Vim | :1835,1864s/t_group_file/t_group_space_visit_record/g
+Vim | :1835,1864s/t_grou_file/t_group_space_visit_record/g
+Vim | :1835,1864s/gf/gr/g
+Vim | :1835,1864s/FILE/LOG/g
+Vim | :1830,1849s/\s\+return.\+//ig
+Vim | :1830,1849s/.\+//ig
+Vim | :1830,1849s/\s\+[^"]\+"\([^"]\+\)"[^:]\+:/def \1():/ig
+Vim | :171,187s/\(\s\+\)\(.\+\)/\1\1if "\2" in method:\r\1\1\1return \2(*params)/ig
+Vim | :171,187s/[0-9]\+.\+://ig
+Vim | :1766,1806s/t_group_photo/t_group_space_visit_record/g
+Vim | :1766,1806s/file_id/record_id/g
+Vim | :1766,1806s/gf/gr/g
+Vim | :1766,1806s/FILE/LOG/g
+Vim | :1766,1806s/fk/lk/g
+Vim | :1748,1752s/\s\+"\([^"]\+\)"/gl.\1/g
+Vim | :1715,1718s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in lk:\r\1\1log.\2 = LOG["\2"]\r\1\1ct = ct + 1\r/g
+Vim | :1715,1718s/\(\s\+\)"\([^"]\+\)",/\1 if "\2" in lk:\r\1\1log.\2 = LOG["group_id"]\r\1\1ct = ct + 1\r/g
+Vim | :1705,1753s/file/log/g
+Vim | :1705,1753s/FILE/LOG/g
+Vim | :1705,1753s/fk/lk/g
+Vim | :308,312s/\(\s\+\)\([^ ]\+\)[^,]\+/\1"\2"/ig
+Vim | :304,335s/t_group_file/t_space_visit_record/g
+Vim | :304,335s/FILE/LOG/g
+Vim | :1642,1651s/gp/gf/g
+Vim | :1627,1636s/ak/fk/g
+Vim | :1669,1701s/ak/fk/g
+Vim | :1669,1701s/gp\./gf./g
+Vim | :1669,1701s/ALBUM/FILE/g
+Vim | :1627,1661s/photo_id/file_id/g
+Vim | :1627,1661s/gp\./gf./g
+Vim | :1627,1661s/ALBUM/FILE/g
+Vim | :1602,1609s/\s\+"\([^"]\+\)"/gf.\1/ig
+Vim | 23,80s/:[a-zA-Z].\+//g
+Vim | 23,80s/:[0-9]\+,[0-9]\+[yd].*//g
+Vim | /def\supdate[A-Z]
+
+[2009-11-21]
+
+:159,164s/\s\+\([^ ]\+\)\s.\+/\1/g
+:34,39s/\(%([^)]\+)s\)/'\1'/g
+:1,$s/coment/
+:1,$s/\t/    /g
+:539,547s/\(\t\)\(.\+\)/\1if '\2' not in sk:\r\1\1return reError(*setting.PARAMS_LEAK)\r\1else:\r\1\1argv.append(repr(SQS["\2"]))\r/g
+:539,547s/\(\t\)\(.\+\)/\1if '\2' not in sk:\r\1\1return reError(*setting.PARAMS_LEAK)\r\1else:\r\1\1argv.append(SQS["\2"])\r/g
+:89,123s/\([^,]\+\)/\t"\1"/g
+:89,123s/\([^,]\)/\t"\1"/g
+:89,123s/^\s\+[^.]\+\.//g
+:150,182s/\(\s\+\)"\([^"]\+\)",/\1if "\2" in qk:\r\1\1qp.\2 = QUESTION["\2"]\r\1\1ct = ct + 1\r/g
+:150,181s/\(\s\+\)"\(["]\+\)",/\1if "\2" in qk:\r\1\1qp.\2 = QUESTION["\2"]\r\r/g
+:150,182s/\(\s\+\)"\(["]\+\)",/\1if "\2" in qk:\r\1\1qp.\2 = QUESTION["\2"]\r\r/g
+:150,182s/\(\s\+\)"\(["]\+\)",/\1if "\2" in qk:\r/g
+:743,746s/\t"\([^"]\+\)",/\tif "\1" in tk:\r\t\ttp.\1 = TYPE["\1"]\r\t\tct = ct + 1\r/g
+:136,139s/\s\+\([^ ]\+\)\s[^,]\+/\t"\1"/g
+:609,712s/sqs\.//g
+:609,643s/\t"\([^"]\+\)",/\tif "\1" in qk:\r\t\tsets.append("  sqs.\1 like '%%%s%%'" % SQS["\1"])\r/g
+:609,643s/\t"\([^"]\+\)",/\tif "\1" in qk:\t\tsets.append("  ")/g
+:609,643s/\t"\([^"]\+\)",/\tif "\1" in /g
+:1,$s/\sbyte\s/ bytes /g
+:1,$s/\sstring\s/ byte /g
+

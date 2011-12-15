@@ -1,0 +1,33 @@
+城斌 21:14:02
+除此之外，我要另外填几个数据进去
+无限 21:14:26
+那继续
+韩城斌 21:16:41
+订单处理编号 订单处理状态 订单变更信息 经手人 快递公司 快递单号
+
+
+只要导出  
+
+买家会员名 买家支付宝账号 买家实际支付金额 收货人姓名 收货地址 联系电话 联系手机 订单付款时间 订单备注 订单编号 价格 购买数量 外部系统编号 商品属性 备注
+custom_name , alipay_id , custom_pay , consignee , shipping_address , phone ,mobile , order_pay_time , order_remarks , order_id , price , order_count , out_sn , property , remarks 
+
+
+这些字段就可以了 有空格的也保留
+
+
+
+下载1：
+
+0"订单编号",1"买家会员名",2"买家支付宝账号",3"买家应付货款",4"买家应付邮费",5"买家支付积分",6"总金额",7"返点积分",8"买家实际支付金额",9"买家实际支付积分",10"订单状态",11"买家留言",12"收货人姓名",13"收货地址 ",14"运送方式",15"联系电话 ",16"联系手机",17"订单创建时间",18"订单付款时间 ",19"宝贝标题 ",20"宝贝种类 ",21"物流单号 ",22"物流公司",23"订单备注
+
+
+提取:
+0,		1,		2,	8,	    11, 	12,	13,		  15,	  16,		18,	23
+order_id , custom_name , alipay_id , custom_pay , remarks , consignee , shipping_address , phone , mobile , pay_time , order_remarks
+
+
+下载2：
+0"订单编号",1"标题",2"价格",3"购买数量",4"外部系统编号",5"商品属性",6"套餐信息",7"备注"
+
+0,	     1,	      2,	3,	   4,		5,	7
+order_id , title ,  price , order_count , out_sn , property , remarks

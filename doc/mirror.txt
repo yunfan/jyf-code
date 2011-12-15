@@ -1,0 +1,6 @@
+ftp://61.178.18.80/tcz.tar 
+ftp://221.7.37.140/tcz.tar 
+ftp://202.201.0.208/tcz.tar 
+电信 网通 教育网
+
+http://prosody.im/source/hg/index.cgi/file/tip/net/server.lua

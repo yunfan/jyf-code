@@ -1,0 +1,18 @@
+application: or2
+version: 11
+runtime: python
+api_version: 1
+
+inbound_services:
+- xmpp_message
+
+handlers:
+- url: /
+  script: home.py
+
+- url: /_ah/xmpp/message/chat/
+  script: xio2.py
+
+- url: /.*
+  script: notfound.py
+

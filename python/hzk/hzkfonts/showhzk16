@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+
+chars = sys.argv[1]
+chars = chars.decode("utf-8").encode("gb2312")
+
+def bin(num):
+    assert type(num) == int, Exception("int type require")
+    assert num >= 0, Exception("need bigger than zero")
+    assert num < 256, Exception("only accept 1 Byte number")
+    
+    res = []
+    while num > 1:
+        res.append(str(num % 2))
+        num = num / 2
+    res.append(str(num))
+    for i in range(8-len(res)):
+        res.append('0')
+    res.reverse()
+    res_s = ''.join(res)
+    return res_s
+
+def queryChar(s):
+    fontfile = 'hzk16'
+    qh = ord(s[0])-160
+    wh = ord(s[1])-160
+    offset = ( (qh-1)*94 + wh - 1) * 32
+    fp = open(fontfile, 'rb')
+    fp.seek(offset)
+    data = fp.read(32)
+    for i in range(0,32,2):
+        ls = data[i]
+        rs = data[i+1]
+        s = '%s%s' % ( bin(ord(ls)), bin(ord(rs)) )
+        s = s.replace('1', '+')
+        s = s.replace('0', ' ')
+        print s
+
+for i in range(0, len(chars), 2):
+    queryChar(chars[i:i+2])
+
+
+
