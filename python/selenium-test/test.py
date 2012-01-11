@@ -1,6 +1,9 @@
 #!/usr/bin/env python2.6
 # -*- coding: utf-8 -*-
 
+import sys
+import shutil
+import os
 import urllib2
 import traceback
 from pprint import pprint as pp
@@ -24,11 +27,16 @@ def debug(msg):
     print msg
     pass
 
-def init():
-    fp = webdriver.FirefoxProfile()
+def init(profile_dir=None, image_toggle=False):
+    fp = webdriver.FirefoxProfile(profile_dir)
     fp.add_extension(extension='firebug-1.9.0.xpi')
     fp.set_preference("extensions.firebug.currentVersion", "1.9.0")
+    fp.set_preference("services.sync.prefs.sync.permissions.default.image", "true")
+    if image_toggle:
+        fp.set_preference("permissions.default.image", 2)
+    print 'path',fp.path
     agent = webdriver.Firefox(firefox_profile=fp)
+    #agent = webdriver.Firefox()
     return agent
 
 def check_login_succ(agent):
@@ -103,8 +111,20 @@ def do_fetch_weibo(agent, fname, url):
         next_page.click()
 
 def main():
-    agent = init()
-    targets = { 
+    if len(sys.argv) != 2:
+        sys.exit(1)
+    act = sys.argv[1]
+
+    if act == 'login':
+        agent = init('.profile')
+        do_login(agent, 600)
+        agent.close()
+        if os.path.exists('.profile'):
+            shutil.rmtree('.profile')
+        shutil.copytree(agent.profile.path, '.profile')
+        return
+
+    targets = {
                 'aisk': 'http://weibo.com/aisk',
                 'notedit': 'http://weibo.com/notedit',
                 'gashero': 'http://weibo.com/u/1771197801',
@@ -118,14 +138,21 @@ def main():
                 'notedit': 'http://weibo.com/notedit',
                 }
     try:
-        do_login(agent, 600)
+        agent = init('.profile', True)
+        agent.get(SINA_LOGIN_URL)
         for fname, url in targets.iteritems():
             do_fetch_weibo(agent, fname, url)
         ##time.sleep(1200)
     except:
         traceback.print_exc()
     finally:
-        agent.close()
+        if os.path.exists('.profile'):
+            shutil.rmtree('.profile')
+        if locals().has_key('agent'):
+            agent.close()
+            print agent.profile.path
+            shutil.copytree(agent.profile.path, '.profile')
+
 
 if '__main__' == __name__:
     main()
