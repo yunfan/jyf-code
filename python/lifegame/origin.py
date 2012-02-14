@@ -149,28 +149,45 @@ def TestLifeEngine():
     world_size = (96, 96)
     keep_numbers = (2, 3)
     born_numbers = (3, )
-    eng = LifeEngine(world_size, keep_numbers, born_numbers)
-    draw = DrawShape(eng)
+
+    eng1 = LifeEngine(world_size, keep_numbers, born_numbers)
+    eng2 = LifeEngine(world_size, keep_numbers, born_numbers)
+    eng3 = LifeEngine(world_size, keep_numbers, born_numbers)
+
+    draw = DrawShape(eng1)
     draw.glider(1,1)
+    draw = DrawShape(eng2)
+    draw.glider(16,1)
+    draw = DrawShape(eng3)
+    draw.glider(1, 48)
 
     step = 9999
 
     cell_size = (6, 6)
-    colors = [(0,0,0), (127, 0, 0)]
+    colors = [  (0, 0, 0), (127, 0, 0),
+                (0, 0, 0), (0, 127, 0),
+                (0, 0, 0), (0, 0, 127), ]
+
     gb = GridBox(world_size[0], world_size[1], cell_size, colors)
 
     for idx in xrange(step):
-        for event in eng.iterstep():
+        for event in eng1.iterstep():
             #print "step", idx, "event", event
             status = 1 if event[2] else 0
             gb.fill(event[:2], status)
+
+        for event in eng2.iterstep():
+            status = 1 if event[2] else 0
+            status += 2
+            gb.fill(event[:2], status)
+
+        for event in eng3.iterstep():
+            status = 1 if event[2] else 0
+            status += 4
+            gb.fill(event[:2], status)
+
         gb.flush()
-        if eng.alive_count <= 0:
-            break
-        else:
-            #print "step", idx, "alive_count", eng.alive_count
-            pass
-        time.sleep(0.01)
+        #time.sleep(0.001)
 
 def test():
     TestLifeEngine()
