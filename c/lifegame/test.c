@@ -11,8 +11,8 @@ void draw_glider(world * w, unsigned int x, unsigned int y){
 }
 
 int main(int argc, char * * argv){
-    int x = 96;
-    int y = 96;
+    int x = 960;
+    int y = 960;
     int idx = 0;
     int step = 0;
     world * w;
@@ -21,7 +21,7 @@ int main(int argc, char * * argv){
     w = world_init(x, y);
     draw_glider(w, 1, 1);
 
-    for(step=0; step<99; step++){
+    for(step=0; step<100; step++){
         evts = world_runonce(w);
 
         while(idx++ < evts->length){

@@ -3,10 +3,9 @@
 
 import random
 import pygame
-from sys import exit
-from pprint import pprint as pp
 import time
 import copy
+from sys import exit
 
 genint = lambda m: random.randint(0, m)
 
@@ -21,7 +20,7 @@ class GridBox:
         pygame.init()
         self.screen = pygame.display.set_mode(
             (width*cell_size[0], height*cell_size[1]),
-            pygame.DOUBLEBUF,       ## 双缓冲
+            pygame.DOUBLEBUF|pygame.HWSURFACE|pygame.FULLSCREEN,    ## 双缓冲
             32)
         self.clear()
 
@@ -146,32 +145,38 @@ class DrawShape:
 
 
 def TestLifeEngine():
-    world_size = (96, 96)
+    world_size = (160, 120)
     keep_numbers = (2, 3)
     born_numbers = (3, )
 
     eng1 = LifeEngine(world_size, keep_numbers, born_numbers)
+    #eng2 = LifeEngine(world_size, keep_numbers, born_numbers)
+    #eng3 = LifeEngine(world_size, keep_numbers, born_numbers)
 
     draw = DrawShape(eng1)
     draw.glider(1,1)
+    #draw = DrawShape(eng2)
+    #draw.glider(16,1)
+    #draw = DrawShape(eng3)
+    #draw.glider(1, 48)
 
     step = 99
 
-    cell_size = (6, 6)
+    cell_size = (4, 4)
     colors = [  (0, 0, 0), (127, 0, 0),
                 (0, 0, 0), (0, 127, 0),
                 (0, 0, 0), (0, 0, 127), ]
 
-    #gb = GridBox(world_size[0], world_size[1], cell_size, colors)
+    gb = GridBox(world_size[0], world_size[1], cell_size, colors)
 
     for idx in xrange(step):
         for event in eng1.iterstep():
-            print "step", idx, "event", event
+            #print "step", idx, "event", event
             status = 1 if event[2] else 0
-            #gb.fill(event[:2], status)
-
-        #gb.flush()
-        #time.sleep(1)
+            gb.fill(event[:2], status)
+        gb.flush()
+        #time.sleep(0.001)
+    exit()
 
 def test():
     TestLifeEngine()
