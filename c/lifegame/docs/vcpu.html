@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
+<title>Virtual CPU Design</title>
+<meta name="author" content="jyf" />
+<meta name="date" content="2012-02-16" />
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5951 2009-05-18 18:03:10Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left{
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: left }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="virtual-cpu-design">
+<h1 class="title">Virtual CPU Design</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>jyf</td></tr>
+<tr><th class="docinfo-name">Date:</th>
+<td>2012-02-16</td></tr>
+</tbody>
+</table>
+<div class="contents topic" id="index">
+<p class="topic-title first">Index</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#concept" id="id1">1&nbsp;&nbsp;&nbsp;concept</a></li>
+<li><a class="reference internal" href="#opcodes-details" id="id2">2&nbsp;&nbsp;&nbsp;opcodes details</a><ul class="auto-toc">
+<li><a class="reference internal" href="#math-operations" id="id3">2.1&nbsp;&nbsp;&nbsp;math operations</a><ul class="auto-toc">
+<li><a class="reference internal" href="#add" id="id4">2.1.1&nbsp;&nbsp;&nbsp;add</a></li>
+<li><a class="reference internal" href="#sub" id="id5">2.1.2&nbsp;&nbsp;&nbsp;sub</a></li>
+<li><a class="reference internal" href="#multiply" id="id6">2.1.3&nbsp;&nbsp;&nbsp;multiply</a></li>
+<li><a class="reference internal" href="#divide" id="id7">2.1.4&nbsp;&nbsp;&nbsp;divide</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bit-operations" id="id8">2.2&nbsp;&nbsp;&nbsp;bit operations</a><ul class="auto-toc">
+<li><a class="reference internal" href="#shift-left" id="id9">2.2.1&nbsp;&nbsp;&nbsp;shift left</a></li>
+<li><a class="reference internal" href="#shift-right" id="id10">2.2.2&nbsp;&nbsp;&nbsp;shift right</a></li>
+<li><a class="reference internal" href="#bit-and" id="id11">2.2.3&nbsp;&nbsp;&nbsp;bit and</a></li>
+<li><a class="reference internal" href="#bit-or" id="id12">2.2.4&nbsp;&nbsp;&nbsp;bit or</a></li>
+<li><a class="reference internal" href="#bit-xor" id="id13">2.2.5&nbsp;&nbsp;&nbsp;bit xor</a></li>
+<li><a class="reference internal" href="#bit-not" id="id14">2.2.6&nbsp;&nbsp;&nbsp;bit not</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jump-and-branch-operations" id="id15">2.3&nbsp;&nbsp;&nbsp;jump and branch operations</a><ul class="auto-toc">
+<li><a class="reference internal" href="#jump" id="id16">2.3.1&nbsp;&nbsp;&nbsp;jump</a></li>
+<li><a class="reference internal" href="#branch-when-equal" id="id17">2.3.2&nbsp;&nbsp;&nbsp;branch when equal</a></li>
+<li><a class="reference internal" href="#branch-when-greater" id="id18">2.3.3&nbsp;&nbsp;&nbsp;branch when greater</a></li>
+<li><a class="reference internal" href="#branch-when-greater-or-equal" id="id19">2.3.4&nbsp;&nbsp;&nbsp;branch when greater or equal</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-transfer-operations" id="id20">2.4&nbsp;&nbsp;&nbsp;data transfer operations</a><ul class="auto-toc">
+<li><a class="reference internal" href="#copy-between-registers" id="id21">2.4.1&nbsp;&nbsp;&nbsp;copy between registers</a></li>
+<li><a class="reference internal" href="#load-from-memory" id="id22">2.4.2&nbsp;&nbsp;&nbsp;load from memory</a></li>
+<li><a class="reference internal" href="#store-to-memory" id="id23">2.4.3&nbsp;&nbsp;&nbsp;store to memory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="concept">
+<h1><a class="toc-backref" href="#id1">1&nbsp;&nbsp;&nbsp;concept</a></h1>
+<dl class="docutils">
+<dt>endian</dt>
+<dd>little endian</dd>
+<dt>word</dt>
+<dd>32bit</dd>
+<dt>register</dt>
+<dd>32 general purpose 32bit register
+and it has dual register file for quickly switching</dd>
+<dt>ram</dt>
+<dd>1024 KB size
+real mode
+load/store anywhere</dd>
+<dt>opcodes</dt>
+<dd><ul class="first last simple">
+<li>RISC model</li>
+<li>each opcode costs a word</li>
+<li>different opcodes cost different cycles from 1 - 100</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="opcodes-details">
+<h1><a class="toc-backref" href="#id2">2&nbsp;&nbsp;&nbsp;opcodes details</a></h1>
+<p>all opcodes costs a word size.</p>
+<p>and the first 6bit is used for opcode identify, the left 24bit for params</p>
+<p>we will use a c struct to represent that</p>
+<div class="section" id="math-operations">
+<h2><a class="toc-backref" href="#id3">2.1&nbsp;&nbsp;&nbsp;math operations</a></h2>
+<div class="section" id="add">
+<h3><a class="toc-backref" href="#id4">2.1.1&nbsp;&nbsp;&nbsp;add</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b000001
+    unsigned dst:5;         // register id , register to store the value(r0-r31)
+    unsigned src1:5;        // register id , register to add from
+    unsigned src2:5;        // register id , register to add to
+} op_add;
+</pre>
+<p>$dst = $src1 + $src2</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="sub">
+<h3><a class="toc-backref" href="#id5">2.1.2&nbsp;&nbsp;&nbsp;sub</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b000010
+    unsigned dst:5;         // register id , register to store the value
+    unsigned src1:5;        // register id , register to subtract from
+    unsigned src2:5;        // register id , register to subtract
+} op_sub;
+</pre>
+<p>$dst = $src1 - $src2</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="multiply">
+<h3><a class="toc-backref" href="#id6">2.1.3&nbsp;&nbsp;&nbsp;multiply</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b000011
+    unsigned dst_hi:5;      // register id , register to store the high value
+    unsigned dst_lo:5;      // register id , register to store the low value
+    unsigned src1:5;        // register id , register to multiply from
+    unsigned src2:6;        // register id , register to multiply
+} op_mul;
+</pre>
+<p>($dst_hi,$dst_lo) = $src1 * $src2</p>
+<p>it cost 16 cycle</p>
+</div>
+<div class="section" id="divide">
+<h3><a class="toc-backref" href="#id7">2.1.4&nbsp;&nbsp;&nbsp;divide</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b000100
+    unsigned dst_q:5;       // register id , register to store the quotient
+    unsigned dst_r:5;       // register id , register to store the remainder
+    unsigned src1:5;        // register id , register to divide from
+    unsigned src2:5;        // register id , register to divide
+} op_div;
+</pre>
+<p>$dst_r = $src1 / $src2
+$dst_q = $src1 % %src2</p>
+<p>it cost 32 cycle</p>
+</div>
+</div>
+<div class="section" id="bit-operations">
+<h2><a class="toc-backref" href="#id8">2.2&nbsp;&nbsp;&nbsp;bit operations</a></h2>
+<div class="section" id="shift-left">
+<h3><a class="toc-backref" href="#id9">2.2.1&nbsp;&nbsp;&nbsp;shift left</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b000101
+    unsigned dst:5;         // register id , register to store the result
+    unsigned src:5;         // register id , register to get the origin value
+    unsigned offset:5;      // small int, shift offset
+} op_sl;
+</pre>
+<p>$dst = $src &lt;&lt; offset</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="shift-right">
+<h3><a class="toc-backref" href="#id10">2.2.2&nbsp;&nbsp;&nbsp;shift right</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b000110
+    unsigned dst:5;         // register id , register to store the result
+    unsigned src:5;         // register id , register to get the origin value
+    unsigned offset:5;      // small int, shift offset
+} op_sr;
+</pre>
+<p>$dst = $src &gt;&gt; offset</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="bit-and">
+<h3><a class="toc-backref" href="#id11">2.2.3&nbsp;&nbsp;&nbsp;bit and</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b000111
+    unsigned dst:5;         // register id , register to store the result
+    unsigned src1:5;        // register id , register to and from
+    unsigned src2:5;        // register id , register to and from
+} op_and;
+</pre>
+<p>$dst = $src1 &amp; $src2</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="bit-or">
+<h3><a class="toc-backref" href="#id12">2.2.4&nbsp;&nbsp;&nbsp;bit or</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001000
+    unsigned dst:5;         // register id , register to store the result
+    unsigned src1:5;        // register id , register to or from
+    unsigned src2:5;        // register id , register to or from
+} op_or;
+</pre>
+<p>$dst = $src1 | $src2</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="bit-xor">
+<h3><a class="toc-backref" href="#id13">2.2.5&nbsp;&nbsp;&nbsp;bit xor</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001001
+    unsigned dst:5;         // register id , register to store the result
+    unsigned src1:5;        // register id , register to nor from
+    unsigned src2:5;        // register id , register to nor from
+} op_xor;
+</pre>
+<p>$dst = $src1 ^ $src2</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="bit-not">
+<h3><a class="toc-backref" href="#id14">2.2.6&nbsp;&nbsp;&nbsp;bit not</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001010
+    unsigned dst:5;         // register id , register to store the result
+    unsigned src:5;        // register id , register to not from
+} op_not;
+</pre>
+<p>$dst = ~($src)</p>
+<p>it cost 1 cycle</p>
+</div>
+</div>
+<div class="section" id="jump-and-branch-operations">
+<h2><a class="toc-backref" href="#id15">2.3&nbsp;&nbsp;&nbsp;jump and branch operations</a></h2>
+<div class="section" id="jump">
+<h3><a class="toc-backref" href="#id16">2.3.1&nbsp;&nbsp;&nbsp;jump</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001011
+    unsigned addr:18;       // int , the addr for jumping to which is a word addr means the real addr = this_addr * 4
+} op_jmp;
+</pre>
+<p>jump to (addr * 4)</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="branch-when-equal">
+<h3><a class="toc-backref" href="#id17">2.3.2&nbsp;&nbsp;&nbsp;branch when equal</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001100
+    unsigned dst1:5;        // register id , the register store the destine addr
+    unsigned dst2:5;        // register id , the register store the destine addr
+    unsigned src1:5;        // register id , the register store the compare value
+    unsigned src2:5;        // register id , the register store the compare value
+} op_be;
+</pre>
+<dl class="docutils">
+<dt>if $src1 == $src2:</dt>
+<dd>jmp ($dst1 * 4)</dd>
+<dt>else:</dt>
+<dd>jmp ($dst2 * 4)</dd>
+</dl>
+<p>it cost 4 cycle</p>
+</div>
+<div class="section" id="branch-when-greater">
+<h3><a class="toc-backref" href="#id18">2.3.3&nbsp;&nbsp;&nbsp;branch when greater</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001101
+    unsigned dst1:5;        // register id , the register store the destine addr
+    unsigned dst2:5;        // register id , the register store the destine addr
+    unsigned src1:5;        // register id , the register store the compare value
+    unsigned src2:5;        // register id , the register store the compare value
+} op_bgt;
+</pre>
+<dl class="docutils">
+<dt>if $src1 &gt; $src2:</dt>
+<dd>jmp ($dst1 * 4)</dd>
+<dt>else:</dt>
+<dd>jmp ($dst2 * 4)</dd>
+</dl>
+<p>it cost 4 cycle</p>
+</div>
+<div class="section" id="branch-when-greater-or-equal">
+<h3><a class="toc-backref" href="#id19">2.3.4&nbsp;&nbsp;&nbsp;branch when greater or equal</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001110
+    unsigned dst1:5;        // register id , the register store the destine addr
+    unsigned dst2:5;        // register id , the register store the destine addr
+    unsigned src1:5;        // register id , the register store the compare value
+    unsigned src2:5;        // register id , the register store the compare value
+} op_bge;
+</pre>
+<dl class="docutils">
+<dt>if $src1 &gt;= $src2:</dt>
+<dd>jmp ($dst1 * 4)</dd>
+<dt>else:</dt>
+<dd>jmp ($dst2 * 4)</dd>
+</dl>
+<p>it cost 4 cycle</p>
+</div>
+</div>
+<div class="section" id="data-transfer-operations">
+<h2><a class="toc-backref" href="#id20">2.4&nbsp;&nbsp;&nbsp;data transfer operations</a></h2>
+<div class="section" id="copy-between-registers">
+<h3><a class="toc-backref" href="#id21">2.4.1&nbsp;&nbsp;&nbsp;copy between registers</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b001111
+    unsigned dst:5;         // register id , the register to copy to
+    unsigned src:5;         // register id , the register to copy from
+} op_cpy;
+</pre>
+<p>$dst = $src</p>
+<p>it cost 1 cycle</p>
+</div>
+<div class="section" id="load-from-memory">
+<h3><a class="toc-backref" href="#id22">2.4.2&nbsp;&nbsp;&nbsp;load from memory</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b010000
+    unsigned dst:5;         // register id , the register store the value
+    unsigned addr:5;        // register id , the register which contain the addr
+} op_ldr;
+</pre>
+<p>$dst = load ($addr * 4)</p>
+<p>it cost 4 cycle</p>
+</div>
+<div class="section" id="store-to-memory">
+<h3><a class="toc-backref" href="#id23">2.4.3&nbsp;&nbsp;&nbsp;store to memory</a></h3>
+<pre class="literal-block">
+typedef struct {
+    unsigned id:6;          // id = 0b010001
+    unsigned addr:5;        // register id , the register which contain the destine addr
+    unsigned src:5;         // register id , the register store the value
+} op_ldr;
+</pre>
+<p>($addr * 4) &lt;= $src</p>
+<p>it cost 4 cycle</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
