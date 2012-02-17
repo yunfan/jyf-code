@@ -10,11 +10,16 @@ world * world_init(unsigned int width, unsigned int height){
     total = width * height;
 
     w = (world *)malloc(sizeof(world));
+
     w->width = width;
     w->height = height;
     w->alive_count = 0;
+
     w->cells = (cell *)calloc(total, sizeof(cell));
-    w->old_cells = (cell *)calloc(total, sizeof(cell));
+
+    w->evts = (events * )malloc(sizeof(events));
+    w->evts->length = 0;
+    w->evts->events = (event *)calloc(total, sizeof(event));
 
     return w;
 }
@@ -53,48 +58,56 @@ void world_set_cell(world * w, unsigned int x, unsigned int y, int alive){
 }
 
 events * world_runonce(world * w){
-    int total, offset, x, y;
+    int total, x, y, offset;
     int keep_on, alive;
-    events * evt;
-    cell * old_cells;
+
+    events * evts;
+    event * evt_chain;
+    cell * cells;
 
     total = (w->width) * (w->height);
 
-    evt = (events *)malloc(sizeof(events));
-    evt->length = 0;
-    evt->events = (event *)calloc(total, sizeof(event));
+    cells = w->cells;
 
-    old_cells = w->old_cells;
+    evts = w->evts;
+    evts->length = 0;
+    evt_chain = evts->events;
 
     keep_on = FALSE;
 
+    /* detect events */
     for(y=0; y<w->height; y++){
-        for(x=0; x<w->width; x++){
-            if((old_cells->alive) && (old_cells->brother<2 || old_cells->brother>3)){
+        for(x=0; x<w->width; x++, keep_on = FALSE, cells++){
+            if((cells->alive) && (cells->brother<2 || cells->brother>3)){
                 keep_on = TRUE;
                 alive = FALSE;
-            }else if (!old_cells->alive && (old_cells->brother == 3)){
+            }else if (!cells->alive && (cells->brother == 3)){
                 keep_on = TRUE;
                 alive = TRUE;
             }
 
             if(keep_on){
-                evt->events->x = x;
-                evt->events->y = y;
-                evt->events->alive = alive;
-                evt->events++;
-                evt->length++;
-                world_set_cell(w, x, y, alive);
+                evt_chain->x = x;
+                evt_chain->y = y;
+                evt_chain->alive = alive;                           // alive or dead
+                evt_chain++;
+
+                evts->length++;
             }
-            old_cells ++ ;
-            keep_on = FALSE;
         }
     }
-    evt->events -= evt->length;
 
-    memcpy(w->old_cells, w->cells, total);
+    /* update world */
+    evt_chain = evts->events;
+    for(offset=0; offset<evts->length;
+        offset++,
+        world_set_cell(w,
+            evt_chain->x,
+            evt_chain->y,
+            evt_chain->alive),
+        evt_chain++);
 
-    return evt;
+    return evts;
 }
 
 void events_free(events * evts){

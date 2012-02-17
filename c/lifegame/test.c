@@ -17,22 +17,20 @@ int main(int argc, char * * argv){
     int step = 0;
     world * w;
     events * evts;
+    event * evt_chain;
 
     w = world_init(x, y);
     draw_glider(w, 1, 1);
 
-    for(step=0; step<100; step++){
+    for(step=0; step<100; step++, idx=0){
         evts = world_runonce(w);
+        evt_chain = evts->events;
 
-        /* *
         while(idx++ < evts->length){
             printf("step %d event (%d, %d, %s)\n", step,
-                        evts->events->x, evts->events->y,
-                        evts->events->alive?"True":"False");
-            evts->events ++ ;
+                        evt_chain->x, evt_chain->y,
+                        evt_chain->alive?"True":"False");
+            evt_chain ++ ;
         }
-        /* */
-        events_free(evts);
-        idx = 0 ;
     }
 }

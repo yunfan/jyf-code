@@ -9,20 +9,12 @@ typedef struct {
     unsigned brother:4;
 } cell;
 
-/* world type */
-typedef struct {
-    unsigned int width;
-    unsigned int height;
-    unsigned int alive_count;
-    cell * cells;
-    cell * old_cells;
-} world;
-
 /* event type */
 typedef struct {
-    unsigned int x;
-    unsigned int y;
-    unsigned int alive;
+    unsigned x:15;
+    unsigned y:15;
+    unsigned :1;        /* pad field */
+    unsigned alive:1;
 } event;
 
 /* events type */
@@ -30,6 +22,16 @@ typedef struct {
     unsigned int length;
     event * events;
 } events;
+
+/* world type */
+typedef struct {
+    unsigned int width;
+    unsigned int height;
+    unsigned int alive_count;
+    cell * cells;
+    events * evts;
+} world;
+
 
 /* world operation */
 world * world_init(unsigned int width, unsigned int height);
