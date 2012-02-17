@@ -15,6 +15,7 @@ typedef struct {
     unsigned int height;
     unsigned int alive_count;
     cell * cells;
+    cell * old_cells;
 } world;
 
 /* event type */
@@ -36,3 +37,5 @@ world * world_init(unsigned int width, unsigned int height);
 void world_set_cell(world * w, unsigned int x, unsigned int y, int alive);
 
 events * world_runonce(world * w);
+
+void events_free(events * evts);

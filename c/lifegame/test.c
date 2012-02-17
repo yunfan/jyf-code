@@ -24,12 +24,15 @@ int main(int argc, char * * argv){
     for(step=0; step<100; step++){
         evts = world_runonce(w);
 
+        /* *
         while(idx++ < evts->length){
             printf("step %d event (%d, %d, %s)\n", step,
                         evts->events->x, evts->events->y,
                         evts->events->alive?"True":"False");
             evts->events ++ ;
         }
+        /* */
+        events_free(evts);
         idx = 0 ;
     }
 }

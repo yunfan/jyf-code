@@ -14,6 +14,7 @@ world * world_init(unsigned int width, unsigned int height){
     w->height = height;
     w->alive_count = 0;
     w->cells = (cell *)calloc(total, sizeof(cell));
+    w->old_cells = (cell *)calloc(total, sizeof(cell));
 
     return w;
 }
@@ -55,32 +56,24 @@ events * world_runonce(world * w){
     int total, offset, x, y;
     int keep_on, alive;
     events * evt;
-
     cell * old_cells;
 
     total = (w->width) * (w->height);
 
-    old_cells = (cell *)calloc(total, sizeof(cell));
     evt = (events *)malloc(sizeof(events));
     evt->length = 0;
     evt->events = (event *)calloc(total, sizeof(event));
 
-    memcpy(old_cells, w->cells, total);
+    old_cells = w->old_cells;
+
+    keep_on = FALSE;
 
     for(y=0; y<w->height; y++){
         for(x=0; x<w->width; x++){
             if((old_cells->alive) && (old_cells->brother<2 || old_cells->brother>3)){
-                /* *
-                printf("[%d, %d] alive = %d, brother = %d\n", x, y,
-                            old_cells->alive, old_cells->brother);
-                /* */
                 keep_on = TRUE;
                 alive = FALSE;
             }else if (!old_cells->alive && (old_cells->brother == 3)){
-                /* *
-                printf("[%d, %d] alive = %d, brother = %d\n", x, y,
-                            old_cells->alive, old_cells->brother);
-                /* */
                 keep_on = TRUE;
                 alive = TRUE;
             }
@@ -99,5 +92,12 @@ events * world_runonce(world * w){
     }
     evt->events -= evt->length;
 
+    memcpy(w->old_cells, w->cells, total);
+
     return evt;
+}
+
+void events_free(events * evts){
+    free(evts->events);
+    free(evts);
 }
