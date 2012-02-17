@@ -32,28 +32,75 @@ y){
 }
 
 void world_set_cell(world * w, unsigned int x, unsigned int y, int alive){
-    int offset;
+    int offset, arround, total;
     int plus;
 
     offset = y * (w->width) + x;
     plus = alive ? 1:-1;
+    total = w->width * w->height;
 
     (w->cells+offset)->alive = alive;
     (w->alive_count) += plus ;
 
+    /* top-left */
+    arround = offset - w->width - 1;
+    arround = x > 0 ? arround : arround + w->width;
+    arround = y > 0 ? arround : arround + total;
+    //printf("(%d,%d)top-left: arround: %d\n", x, y, arround);
+    (w->cells+arround)->brother += plus;
+
+    /* top-middle */
+    arround ++ ;
+    //printf("top-middle: arround: %d\n", arround);
+    (w->cells+arround)->brother += plus;
+
+    /* top-right */
+    arround = x < w->width ? arround + 1 : arround - w->width + 1;
+    //printf("top-right: arround: %d\n", arround);
+    (w->cells+arround)->brother += plus;
+
+    /* middle-left */
+    arround = offset - 1;
+    arround = x > 0 ? arround : arround + w->width;
+    //printf("middle-left: arround: %d\n", arround);
+    (w->cells+arround)->brother += plus;
+
+    /* middle-right */
+    arround = x < w->width ? arround + 2 : arround - w->width + 2;
+    //printf("middle-right: arround: %d\n", arround);
+    (w->cells+arround)->brother += plus;
+
+    /* bottom-left */
+    arround = offset + w->width - 1;
+    arround = x > 0 ? arround : arround + w->width;
+    arround = y < w->height ? arround : arround - total;
+    //printf("bottom-left: arround: %d\n", arround);
+    (w->cells+arround)->brother += plus;
+
+    /* bottom-middle */
+    arround ++ ;
+    //printf("bottom-middle: arround: %d\n", arround);
+    (w->cells+arround)->brother += plus;
+
+    /* bottom-right */
+    arround = x < w->width ? arround + 1 : arround - w->width + 1;
+    //printf("bottom-right: arround: %d\n", arround);
+    (w->cells+arround)->brother += plus;
+
+
     /* update top-left, top-midle, top-right */
-    (w->cells+world_get_offset(w, x-1, y-1))->brother += plus;
-    (w->cells+world_get_offset(w, x, y-1))->brother += plus;
-    (w->cells+world_get_offset(w, x+1, y-1))->brother += plus;
+//    (w->cells+world_get_offset(w, x-1, y-1))->brother += plus;
+//    (w->cells+world_get_offset(w, x, y-1))->brother += plus;
+//    (w->cells+world_get_offset(w, x+1, y-1))->brother += plus;
 
     /* update midle-left, middle-right  */
-    (w->cells+world_get_offset(w, x-1, y))->brother += plus;
-    (w->cells+world_get_offset(w, x+1, y))->brother += plus;
+//    (w->cells+world_get_offset(w, x-1, y))->brother += plus;
+//    (w->cells+world_get_offset(w, x+1, y))->brother += plus;
 
     /* update bottom-left, bottom-middle, bottom-right  */
-    (w->cells+world_get_offset(w, x-1, y+1))->brother += plus;
-    (w->cells+world_get_offset(w, x, y+1))->brother += plus;
-    (w->cells+world_get_offset(w, x+1, y+1))->brother += plus;
+//    (w->cells+world_get_offset(w, x-1, y+1))->brother += plus;
+//    (w->cells+world_get_offset(w, x, y+1))->brother += plus;
+//    (w->cells+world_get_offset(w, x+1, y+1))->brother += plus;
 
 }
 
