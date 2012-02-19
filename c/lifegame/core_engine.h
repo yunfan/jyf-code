@@ -1,3 +1,5 @@
+#ifndef __CORE_ENGINE
+#define __CORE_ENGINE
 #define TRUE 1
 #define FALSE 0
 
@@ -41,3 +43,5 @@ void world_set_cell(world * w, unsigned int x, unsigned int y, int alive);
 events * world_runonce(world * w);
 
 void events_free(events * evts);
+
+#endif
