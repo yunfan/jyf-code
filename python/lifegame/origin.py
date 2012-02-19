@@ -143,9 +143,62 @@ class DrawShape:
         self.engine.setcell(x+2, y+1, True)
         self.engine.setcell(x+2, y+2, True)
 
+    def glider_gun(self, x, y):
+        self.engine.setcell( x+1, y+5, True)
+        self.engine.setcell( x+1, y+6, True)
+        self.engine.setcell( x+2, y+5, True)
+        self.engine.setcell( x+2, y+6, True)
+        self.engine.setcell( x+2, y+6, True)
+
+        self.engine.setcell( x+11, y+5, True)
+        self.engine.setcell( x+11, y+6, True)
+        self.engine.setcell( x+11, y+7, True)
+
+        self.engine.setcell( x+12, y+4, True)
+        self.engine.setcell( x+12, y+8, True)
+
+        self.engine.setcell( x+13, y+3, True)
+        self.engine.setcell( x+13, y+9, True)
+
+        self.engine.setcell( x+14, y+3, True)
+        self.engine.setcell( x+14, y+9, True)
+
+        self.engine.setcell( x+15, y+6, True)
+
+        self.engine.setcell( x+16, y+4, True)
+        self.engine.setcell( x+16, y+8, True)
+
+        self.engine.setcell( x+17, y+5, True)
+        self.engine.setcell( x+17, y+6, True)
+        self.engine.setcell( x+17, y+7, True)
+
+        self.engine.setcell( x+18, y+6, True)
+
+        self.engine.setcell( x+21, y+3, True)
+        self.engine.setcell( x+21, y+4, True)
+        self.engine.setcell( x+21, y+5, True)
+
+        self.engine.setcell( x+22, y+3, True)
+        self.engine.setcell( x+22, y+4, True)
+        self.engine.setcell( x+22, y+5, True)
+
+        self.engine.setcell( x+23, y+2, True)
+        self.engine.setcell( x+23, y+6, True)
+
+        self.engine.setcell( x+25, y+1, True)
+        self.engine.setcell( x+25, y+2, True)
+        self.engine.setcell( x+25, y+6, True)
+        self.engine.setcell( x+25, y+7, True)
+
+        self.engine.setcell( x+35, y+3, True)
+        self.engine.setcell( x+35, y+4, True)
+
+        self.engine.setcell( x+36, y+3, True)
+        self.engine.setcell( x+36, y+4, True)
+
 
 def TestLifeEngine():
-    world_size = (160, 120)
+    world_size = (64, 64)
     keep_numbers = (2, 3)
     born_numbers = (3, )
 
@@ -155,26 +208,28 @@ def TestLifeEngine():
 
     draw = DrawShape(eng1)
     draw.glider(1,1)
+    #draw.glider_gun(1,1)
     #draw = DrawShape(eng2)
     #draw.glider(16,1)
     #draw = DrawShape(eng3)
     #draw.glider(1, 48)
 
-    step = 99
+    #step = 3000
+    step = 200
 
-    cell_size = (4, 4)
+    cell_size = (6, 6)
     colors = [  (0, 0, 0), (127, 0, 0),
                 (0, 0, 0), (0, 127, 0),
                 (0, 0, 0), (0, 0, 127), ]
 
-    gb = GridBox(world_size[0], world_size[1], cell_size, colors)
+    ##gb = GridBox(world_size[0], world_size[1], cell_size, colors)
 
     for idx in xrange(step):
         for event in eng1.iterstep():
-            #print "step", idx, "event", event
+            print "step", idx, "event", event
             status = 1 if event[2] else 0
-            gb.fill(event[:2], status)
-        gb.flush()
+            ##gb.fill(event[:2], status)
+        ##gb.flush()
         #time.sleep(0.001)
     exit()
 
