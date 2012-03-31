@@ -1,0 +1,11 @@
+#!/bin/sh
+
+## this script was made for pass the depends for compiling i3wm on ubuntu natty
+
+for pkg in `apt-cache search libxcb  | cut -d' ' -f1 | grep 'dev' |  grep libxcb`; \
+do \
+    sudo apt-get -q -y install $pkg; \
+done
+
+sudo apt-get -q -y install bison flex libstartup-notification0-dev
+sudo apt-get -q -y install libpcre3-dev libev-dev libyajl-dev libxcursor-dev
