@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+import traceback
 from struct import unpack
+from pprint import pprint as pp
 
 def _stack_cmd(cmd, env):
     if cmd == 0x01:
@@ -33,7 +36,7 @@ def _stack_cmd(cmd, env):
     elif cmd == 0x08:
         ## load
         env['ip'] += 1
-        env['ds'].append(env['ip'])
+        env['ds'].append(env['code'][env['ip']])
     env['ip'] += 1
 
 def _branch_cmd(cmd, env):
@@ -123,6 +126,8 @@ def _service_cmd(cmd, env):
         env['ip'] += 1
         return
     num, plen = env['ds'].pop(), env['ds'].pop()
+    ##print plen, num
+    ##pp(env['ds'])
     args = [env['ds'].pop() for idx in xrange(plen)]
     svr_pool = 'sys_services' if num < 256 else 'custom_services'
     srv = env[svr_pool].get(num, None)
@@ -130,7 +135,7 @@ def _service_cmd(cmd, env):
         srv(env, *args)
     env['ip'] += 1
 
-class SweezerVm(object):
+class TweezerVm(object):
     def __init__(self, romfile):
         self.reset()
         self.load_rom(romfile)
@@ -145,27 +150,37 @@ class SweezerVm(object):
 
     def load_rom(self, romfile):
         MAGIC = romfile.read(4)
-        if MAGIC != 'SZVM':
+        if MAGIC != 'TZVM':
             raise Exception('this is not a valid rom file: MAGIC invalid')
         header_size, heap_size, code_size = unpack('<3i', romfile.read(12))
+        ##print >>sys.stderr, 'header_size: %d, heap_size: %d, code_size: %d' % (header_size, heap_size, code_size)
         if heap_size % 4 != 0 or code_size % 4 != 0:
             raise Exception('this is not a valid rom file: HEAP_SIZE or CODE_SIZE unalign')
         ## i dont care header
         heap_len = heap_size/4
         code_len = code_size/4
 
-        romfile.seek(romfile.pos + header_size)
-        self._env['heap'] = list(unpack('<%di'%heap_len, heap_size))
+        romfile.seek(romfile.tell() + header_size)
+        self._env['heap'] = list(unpack('<%di'%heap_len, romfile.read(heap_size)))
+        ##pp(self._env['heap'])
 
-        romfile.seek(romfile.pos + heap_size)
-        self._env['code'] = list(unpack('<%di'%code_len, code_size))
+        codes = romfile.read(code_size)
+        ##pp(unpack('<%di'%(len(codes)/4), codes))
+        self._env['code'] = list(unpack('<%di'%code_len, codes))
 
     def run(self, addr=0):
         env = self._env
         env['ip'] = addr
         while True:
             cmd = self._env['code'][env['ip']]
-            self.slot[cmd](cmd, env)
+            if cmd == 0x00:
+                return
+            try:
+                self.slot[cmd](cmd, env)
+            except:
+                traceback.print_exc()
+                pp(self._env)
+                return
 
     def reset(self):
         self._env = {
@@ -177,6 +192,7 @@ class SweezerVm(object):
             'sys_services': {},
             'custom_services': {},
             }
+        self.slot = {}
         return
 
     def register_service(self, serv_num, callb):
@@ -184,3 +200,7 @@ class SweezerVm(object):
             return False
         self._env['custom_services'][serv_num] = callb
         return True
+
+    def dump(self):
+        pp(self._env)
+
