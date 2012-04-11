@@ -15,6 +15,9 @@ def srv_print(env, str_ref):
     tstr = ''.join(tstr)
     print tstr
 
+def srv_print_int(env, int_val):
+    print int_val
+
 def main():
     assert len(sys.argv) >= 2, "fuck off"
     romfile = sys.argv[1]
@@ -23,7 +26,10 @@ def main():
     rp = open(romfile, 'rb')
     tvm = vm.TweezerVm(rp)
     tvm.register_service(256, srv_print)
+    tvm.register_service(257, srv_print_int)
     tvm.run()
+    ##env = tvm._env
+    ##print env['code'][env['ip']]
 
 if '__main__' == __name__:
     main()

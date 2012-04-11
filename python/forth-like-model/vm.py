@@ -37,6 +37,7 @@ def _stack_cmd(cmd, env):
         ## load
         env['ip'] += 1
         env['ds'].append(env['code'][env['ip']])
+    ##print env['ds'], env['cs']
     env['ip'] += 1
 
 def _branch_cmd(cmd, env):
@@ -67,7 +68,7 @@ def _branch_cmd(cmd, env):
     elif cmd == 0x0f:
         ## bge
         fst, sec = env['ds'].pop(), env['ds'].pop()
-        env['ip'] = addr if sec > fst else env['ip'] + 1
+        env['ip'] = addr if sec >= fst else env['ip'] + 1
     elif cmd == 0x10:
         ## bneq
         fst, sec = env['ds'].pop(), env['ds'].pop()
@@ -76,6 +77,7 @@ def _branch_cmd(cmd, env):
         ## bnez
         fst = env['ds'].pop()
         env['ip'] = addr if fst != 0 else env['ip'] + 1
+    ##print env['ds'], env['cs']
 
 def _math_cmd(cmd, env):
     if cmd == 0x12:
@@ -119,6 +121,7 @@ def _math_cmd(cmd, env):
         ## not
         fst = env['ds'].pop()
         env['ds'].append(~fst)
+    ##print env['ds'], env['cs']
     env['ip'] += 1
 
 def _service_cmd(cmd, env):
@@ -133,6 +136,7 @@ def _service_cmd(cmd, env):
     srv = env[svr_pool].get(num, None)
     if callable(srv):
         srv(env, *args)
+    ##print env['ds'], env['cs']
     env['ip'] += 1
 
 class TweezerVm(object):
@@ -179,7 +183,7 @@ class TweezerVm(object):
                 self.slot[cmd](cmd, env)
             except:
                 traceback.print_exc()
-                pp(self._env)
+                ##pp(self._env)
                 return
 
     def reset(self):

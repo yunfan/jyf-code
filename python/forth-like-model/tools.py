@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.5
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import sys
@@ -153,8 +153,8 @@ def asm(inf, outf):
 
     code.append(0x00)
     ip.close()
-    pp(heap)
-    pp(code)
+    ##pp(heap)
+    ##pp(code)
     ## build rom
     f = open(outf, 'wb')
     ## magic code
