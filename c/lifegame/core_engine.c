@@ -31,7 +31,8 @@ y){
     return (y%(w->height))*(w->width) + x % (w->width);
 }
 
-void world_set_cell(world * w, unsigned int x, unsigned int y, int alive){
+void _world_set_cell(world * w, unsigned int x, unsigned int y, int alive);
+void _world_set_cell(world * w, unsigned int x, unsigned int y, int alive){
     int offset, arround, total;
     int plus;
 
@@ -101,6 +102,57 @@ void world_set_cell(world * w, unsigned int x, unsigned int y, int alive){
 //    (w->cells+world_get_offset(w, x-1, y+1))->brother += plus;
 //    (w->cells+world_get_offset(w, x, y+1))->brother += plus;
 //    (w->cells+world_get_offset(w, x+1, y+1))->brother += plus;
+
+}
+
+static unsigned int world_cell_locate(world * w, int x, int y){
+    if (x<0||x>=w->width) return 0;
+    if (y<0||y>=w->height) return 0;
+    return y*w->height+x;
+}
+
+void world_set_cell(world * w, unsigned int x, unsigned int y, int alive){
+    int offset, arround, total;
+    int plus;
+
+    offset = y * (w->width) + x;
+    plus = alive ? 1:-1;
+    total = w->width * w->height;
+
+    (w->cells+offset)->alive = alive;
+    (w->alive_count) += plus ;
+
+    /** top-left **/
+    arround = world_cell_locate(w, x-1, y-1);
+    if(arround)(w->cells+arround)->brother += plus;
+
+    /** top-middle **/
+    arround = world_cell_locate(w, x, y-1);
+    if(arround)(w->cells+arround)->brother += plus;
+
+    /** top-right **/
+    arround = world_cell_locate(w, x+1, y-1);
+    if(arround)(w->cells+arround)->brother += plus;
+
+    /** middle-left **/
+    arround = world_cell_locate(w, x-1, y);
+    if(arround)(w->cells+arround)->brother += plus;
+
+    /** middle-right **/
+    arround = world_cell_locate(w, x+1, y);
+    if(arround)(w->cells+arround)->brother += plus;
+
+    /** bottom-left **/
+    arround = world_cell_locate(w, x-1, y+1);
+    if(arround)(w->cells+arround)->brother += plus;
+
+    /** bottom-middle **/
+    arround = world_cell_locate(w, x, y+1);
+    if(arround)(w->cells+arround)->brother += plus;
+
+    /** bottom-right **/
+    arround = world_cell_locate(w, x+1, y+1);
+    if(arround)(w->cells+arround)->brother += plus;
 
 }
 

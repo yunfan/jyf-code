@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <time.h>
 #include "core_engine.h"
 #include "render_engine.h"
 
-#define CELL_W 6
-#define CELL_H 6
-#define MAX_STEP 200
+#define CELL_W 4
+#define CELL_H 4
+#define MAX_STEP 1256
 
 void draw_glider(world * w, unsigned int x, unsigned int y);
 void draw_glider(world * w, unsigned int x, unsigned int y){
@@ -73,8 +74,9 @@ void draw_glider_gun(world * w, unsigned int x, unsigned int y){
 }
 
 int main(int argc, char * * argv){
-    int x = 64;
-    int y = 64;
+    int gen_sig;
+    int x = 128;
+    int y = 128;
     int idx = 0;
     int step = 0;
     useconds_t i = 10000;
@@ -87,7 +89,8 @@ int main(int argc, char * * argv){
 
     w = world_init(x, y);
     //draw_glider_gun(w, 1, 1);
-    draw_glider(w, 1, 1);
+    //draw_glider(w, 59, 59);
+    draw_glider_gun(w, 1, 1);
 
     colors[0].r = 0;
     colors[0].g = 0;
@@ -99,21 +102,41 @@ int main(int argc, char * * argv){
 
     rs = render_sdl_init(x, y, CELL_W, CELL_H, 2, colors);
 
-    for(step=0; step<MAX_STEP; step++, idx=0){
+    srand(time(NULL));
+
+    //for(step=0; step<MAX_STEP; step++, idx=0){
+    while(++step){
         evts = world_runonce(w);
         evt_chain = evts->events;
 
         //render_sdl_step();
-        /* */
+        /* *
         while(idx++ < evts->length){
             printf("step %d event (%d, %d, %s)\n", step,
                         evt_chain->x, evt_chain->y,
                         evt_chain->alive?"True":"False");
             evt_chain ++ ;
         }
+        //printf("step %d alive count: %d\n", step, w->alive_count);
         /* */
 
         render_sdl_draw(rs, evts);
+
+        /* */
+        gen_sig = rand()%100;
+        if(gen_sig>95){
+            printf("step %d now generate a glider\n", step);
+            draw_glider(w, rand()%(w->width-5), rand()%(w->height-5));
+        }
+        /* */
+
+        /* if there is no event occur, then generate a glider*
+        if(!evts->length){
+            printf("step %d now generate a glider\n", step);
+            draw_glider(w, rand()%(w->width-5), rand()%(w->height-5));
+        }
+        /* */
+
         usleep(i);
     }
     SDL_Quit();
