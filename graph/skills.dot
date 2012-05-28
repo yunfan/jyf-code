@@ -1,0 +1,55 @@
+// dot -Tpng skills.dot > skills.png
+digraph {
+    bgcolor="#333300";
+
+    node [style=filled, fillcolor="#00331A", color="#AABFD4", fontcolor="#AABFD4"];
+    //edge [color="#1A0033"];
+    edge [color="white"];
+
+    web -> frontend;
+    web -> backend;
+
+    frontend -> ui;
+    frontend -> live;
+    frontend -> js;
+
+    ui -> bootstrap;
+
+    live -> comet;
+    live -> websocket;
+
+    js -> jquery;
+
+    backend -> db;
+    backend -> http;
+    backend -> queue;
+    backend -> file;
+
+    db -> kvdb -> redis;
+    http -> proxy -> nginx;
+    http -> logic -> tornado;
+    queue -> beanstalkd;
+
+    // here comes some alternative nodes
+    node [style=filled, fillcolor="#B06363", color="#AAD4D4", fontcolor="#223344"];
+    edge [color="#66334D"];
+
+    redis -> diy_type;
+    redis -> my_adt_impl;
+
+    http -> pipeline;
+    http -> compiling;
+    http -> DSVM;
+    http -> forth_tpl;
+
+    file -> big_table;
+
+    {rank=same; frontend; backend;};
+    //{rank=same; ui_design; live_communicate; javascript;};
+    //{rank=same; comet; websocket;};
+
+    {rank=same; db; http; queue; file;};
+    {rank=same; diy_type; my_adt_impl; pipeline; compiling; DSVM; forth_tpl; big_table;};
+
+}
+
