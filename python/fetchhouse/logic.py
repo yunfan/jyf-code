@@ -119,6 +119,7 @@ def main(start_page, endDate):
             except:
                 continue
             items = d(r'#infolist tr')
+            print items
             nextpage = trans(d(r'div.pager strong').next().attr.href)
             if not nextpage.startswith("http://"):
                 nextpage = "%s%s" % ( host, nextpage)
