@@ -7,16 +7,17 @@ from collections import defaultdict
 from pprint import pprint as pp
 
 def huff(seq):
-    ## 假设输入为基本字符集
+    ## we expose the input characters are in basic char set
     freq = defaultdict(int)
-    ## 统计字频
+    ## get the frequncy data
     [freq.update({k:freq[k]+1}) for k in seq]
     #pp(freq)
 
-    ## 建立优先级队列并准备数据
+    ## build a priority queue and prepare the data
     prior_queue = Queue.PriorityQueue()
     [prior_queue.put((v, k)) for (k,v) in freq.iteritems()]
 
+    ## loop until the final one has been generated
     while prior_queue.qsize() > 1:
         item1, item2 = prior_queue.get(), prior_queue.get()
         #print 'item1', item1, 'item2', item2
@@ -35,6 +36,9 @@ def huff(seq):
 
     result_str = huff_encode(seq, symbol_mapping)
     normal_str = ''.join([bin(ord(char))[2:] for char in seq])
+
+    decoded_str = huff_decode(result_str, final_item[1])
+    assert decoded_str == seq, 'decoding error'
 
     print 'encoded length', len(result_str)
     print 'origin length', len(normal_str)
@@ -57,6 +61,26 @@ def build_mapping(prefix, mapping, node):
 def huff_encode(seq, mapping):
     return ''.join([mapping[char] for char in seq])
 
+def huff_decode(seq_encoded, final_node):
+    source = iter(seq_encoded)
+    result = []
+    path = final_node
+
+    while 1:
+        try:
+            bit = source.next()
+            direct = 'left' if bit == '0' else 'right'
+            path_node = path[direct]
+            if not isinstance(path_node, dict):
+                ## match
+                result.append(path_node)
+                path = final_node
+            else:
+                path = path_node
+
+        except StopIteration:
+            return ''.join(result)
+
 
 test_text = """
 You’ve probably heard about David Huffman and his popular compression algorithm. If you didn’t, you’ll find that info on the Internet. I will not bore you with history or math lessons in this article. I’m going to try to show you a practical example of this algorithm applied to a character string. This application will only generate console output representing the code values for the symbols inputted and generate the original symbols from a given code.
@@ -76,5 +100,6 @@ To better understand this example, we’ll going to apply it on an example. The 
 To build the tree this way we’ll use a priority queue with a slight modification, that the element with the least priority is the most important. Meaning that the elements that are the least frequent will be the first ones we get from the queue. We need to do this so we can build the tree from the leaves to the root.
 """
 
+##test_text = 'hello, world'
 huff(test_text)
 
