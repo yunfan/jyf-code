@@ -1,0 +1,37 @@
+#!/bin/sh
+# File: fetch-regex
+# Date: 2009-11-28
+# Author: jyf
+# Comment: get the regex code from viminfo and post it to svn host
+
+src0=/home/$USER/.viminfo
+src1=/home/$USER/.viminfz.tmp
+
+dst=/home/$USER/svn/jyf-code/funny/regex
+today=$(date +'%Y-%m-%d')
+dstf=$dst/$today
+
+echo 'Daily work -> vim regex: Begin'
+
+if [ ! -f ${src0} ]; then
+    echo "${src0} do not exists"
+    exit 0
+fi
+
+cat ${src0}  | sed -n '/^:[0-9]\+,\([0-9]\+\|\$\)s/p' | sort -u > ${dstf}
+
+
+if [ ! -s ${dstf} ]; then
+    echo ${dstf}
+    echo 'you havnt wrote any regex code in vim today!'
+    exit 0
+fi
+
+
+svn add ${dstf}
+svn ci ${dstf} -m 'Automatic Daily Post of regex code used in Vim'
+
+rm ${src0}
+[ -f ${src1} ] && rm ${src1}
+
+echo 'Daily work -> vim regex: End'

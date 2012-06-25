@@ -1,0 +1,6 @@
+#!/bin/bash
+[ "$#" -lt "1" ] && $(echo "sorry plz dont suply an empty words"; exit 0;)
+echo "downloading..."
+wget "http://dict.cn/$1" -O /tmp/$1 -o /dev/null
+iconv -f gbk -t utf8 < /tmp/$1  | sed -n -e '/<div\s\+id="exp_exp"\s\+[^>]\+>/,/<\/div>/p' | sed 's/<div\s\+id="exp_exp"\s\+[^>]\+>//' | sed 's/^\s\+\(.*\)<\/div>/\1/g' | sed 's/<\s*br\s*\/>/\n/g'
+rm /tmp/$1

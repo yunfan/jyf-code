@@ -1,0 +1,35 @@
+set fileencoding=utf-8
+set termencoding=utf-8
+set encoding=utf-8
+
+syntax on
+set nu
+set cursorline
+set cursorcolumn
+set clipboard=unnamed
+
+set smartindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+set list
+set listchars=tab:<-,trail:-
+
+color zellner
+
+map <C-n> <ESC><ESC>:tabnew<CR>
+map <C-left> <ESC><ESC>:tabprev<CR>
+map <C-right> <ESC><ESC>:tabnext<CR>
+map <C-down> <ESC><ESC>:tabclose<CR>
+
+map <C-k> <ESC><ESC>:tabnew<CR>
+map <C-h> <ESC><ESC>:tabprev<CR>
+map <C-l> <ESC><ESC>:tabnext<CR>
+map <C-j> <ESC><ESC>:tabclose<CR>
+
+map <leader>h   :exe 'norm '.(col('$')/2).'<bar>'<cr>
+
+set history=4000

@@ -1,0 +1,25 @@
+
+PRAGMA encoding = "UTF-8"
+
+
+cats (
+	cat_id integer primary key,
+	cat_name varchar(255) not null,
+	cat_depth integer not null defalt 0,
+	parent_id integer not null default 0
+)
+
+files (
+	f_id integer primary key,
+	f_name varchar(255) not null,
+	cat_id integer not null defalt 0
+)
+
+values(
+	v_id integer primary key,
+	v_name varchar(255) not null,
+	v_type integer not null,
+	f_id integer not null
+)
+
+

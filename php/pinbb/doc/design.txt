@@ -1,0 +1,138 @@
+﻿PinBB 论坛系统
+===================================================
+
+支持数据库系统 ： Sqlite2
+
+支持功能: 
+	用户
+		增删改 帖子（自己的）
+		增删改 资料（自己的）
+		浏览论坛版块
+		浏览帖子列表
+	
+	管理员
+		增删改 帖子（有权限的）
+		增删改 版块（有权限的）
+		曾删改 用户（有权限的）
+
+===================================================
+
+数据库设计
+
+	用户表
+	
+	pin_user_base(
+		id integer primary key,
+		name varchar(32) not null,
+		password char(32) not null,
+		group_id integer not null,
+		add_time integer not null,
+		update_time integer not null
+	)
+	
+	pin_user_extra(
+		id integer primary key,
+		user_id integer not null,
+		val_key varchar(32) not null, 
+		val_value varchar(128) not null,
+		add_time integer not null,
+		update_time integer default 0 not null,
+	)
+	
+	
+	组别表
+	
+	pin_group_base(
+		id integer primary key,
+		group_name varchar(32) not null
+	)
+	
+	pin_group_extra(
+		id integer primary key,
+		group_id integer not null,
+		val_key varchar(32) not null, 
+		val_value varchar(128) not null,
+		add_time integer not null,
+		update_time integer default 0 not null,
+	)
+	
+	版块表
+	
+	pin_forum_base(
+		id integer primary key,
+		forum_name varchar(32) not null,
+		forum_desc varchar(255) not null,
+		topic_num integer not null,
+		post_num integer not null,
+		last_post_name varchar(32) not null,
+		last_post_title varchar(255) not null,
+		last_post_id integer not null,
+		last_post_time integer not null,
+		parent_id integer default 0 not null
+	)
+	
+	pin_forum_extra(
+		id integer primary key,
+		forum_id integer not null,
+		val_key varchar(32) not null, 
+		val_value varchar(128) not null,
+		add_time integer not null,
+		update_time integer default 0 not null,
+	)
+	
+	帖子表
+	
+	pin_topic_base(
+		id integer primary key,
+		subject varchar(255) not null,
+		reply_num integer default 0 not null,
+		view_num integer default 0 not null,
+		add_user_id integer default 0 not null,
+		add_user_name varchar(32) not null,
+		add_time integer not null,
+		last_user_id integer default 0 not null,
+		last_user_name varchar(32),
+		last_time integer not null,
+		forum_id integer not null
+	)
+	
+	pin_topic_extra(
+		id integer primary key,
+		topic_id integer not null,
+		val_key varchar(32) not null, 
+		val_value varchar(128) not null,
+		add_time integer not null,
+		update_time integer default 0 not null,
+	)
+	
+	pin_post_base(
+		id integer primary key,
+		topic_id integer not null,
+		subject varchar(255) not null,
+		content text not null,
+		add_time integer not null,
+		user_id integer default 0 not null,
+		user_ip varchar(15) not null,
+		forum_id integer not null,
+		edit_name varchar(32),
+		edit_time integer default 0 not null,
+	)
+	
+	pin_post_extra(
+		id integer primary key,
+		post_id integer not null,
+		val_key varchar(32) not null, 
+		val_value varchar(128) not null,
+		add_time integer not null,
+		update_time integer default 0 not null,
+	)
+
+===================================================
+
+1,所有输出都以xml为主 也可转成json格式;
+
+2,支持国际化,UTF-8;
+
+3,可扩展,插件机制,hook机制
+	
+	

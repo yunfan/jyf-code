@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
+<page>
+	<title>Pinbb论坛</title>
+	<desc>简单既美</desc>
+	<menu>
+		<item>
+			<name>首页</name>
+			<href><![CDATA[xx]]></href>
+		</item>
+		<item>
+			<name>登录</name>
+			<href><![CDATA[index.php?act=login]]></href>
+		</item>
+		<item>
+			<name>注册</name>
+			<href><![CDATA[index.php?act=reg]]></href>
+		</item>
+	</menu>
+	<block>
+		<name>测试分区一</name>
+		<forum>
+			<name>生活天地</name>
+			<href><![CDATA[index.php?act=forum&id=1]]></href>
+			<desc>在这里讨论生活吧</desc>
+			<topic>1</topic>
+			<post>1</post>
+			<last>
+				<id>1</id>
+				<time>2009-06-05 17:27:20</time>
+				<user>root</user>
+			</last>
+		</forum>
+		<forum>
+			<name>技术专区</name>
+			<href><![CDATA[2]]></href>
+			<desc>此处为技术人士专区</desc>
+			<topic>2</topic>
+			<post>3</post>
+			<last>
+				<id>3</id>
+				<time>2009-05-05 17:27:20</time>
+				<user>user2</user>
+			</last>
+		</forum>
+		<forum>
+			<name>灌水乐园</name>
+			<href><![CDATA[3]]></href>
+			<desc>自由自在的大水库</desc>
+			<topic>4</topic>
+			<post>9</post>
+			<last>
+				<id>2</id>
+				<time>2009-06-06 17:27:20</time>
+				<user>root2</user>
+			</last>
+		</forum>
+	</block>
+	<block>
+		<name>测试分区二</name>
+		<forum>
+			<name>生活天地</name>
+			<href><![CDATA[1]]></href>
+			<desc>在这里讨论生活吧</desc>
+			<topic>1</topic>
+			<post>1</post>
+			<last>
+				<id>1</id>
+				<time>2009-06-05 17:27:20</time>
+				<user>root</user>
+			</last>
+		</forum>
+		<forum>
+			<name>技术专区</name>
+			<href><![CDATA[2]]></href>
+			<desc>此处为技术人士专区</desc>
+			<topic>2</topic>
+			<post>3</post>
+			<last>
+				<id>3</id>
+				<time>2009-05-05 17:27:20</time>
+				<user>user2</user>
+			</last>
+		</forum>
+		<forum>
+			<name>灌水乐园</name>
+			<href><![CDATA[3]]></href>
+			<desc>自由自在的大水库</desc>
+			<topic>4</topic>
+			<post>9</post>
+			<last>
+				<id>2</id>
+				<time>2009-06-06 17:27:20</time>
+				<user>root2</user>
+			</last>
+		</forum>
+	</block>
+	<message>
+		<total>
+			<user>999</user>
+			<topic>345</topic>
+			<post>1023</post>
+		</total>
+		<today>
+			<user>9</user>
+			<topic>11</topic>
+			<post>23</post>
+		</today>
+		<author>
+			<name>jyf1987</name>
+			<href><![CDATA[http://hi.baidu.com/jyf1987]]></href>
+			<contact>mailto:jyf1987@gmail.com</contact>
+			<time>2009-06-06</time>
+		</author>
+	</message>
+</page>

@@ -1,0 +1,715 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-04-20 23:19+0800\n"
+"PO-Revision-Date: 2008-04-20 23:20+0800\n"
+"Last-Translator: 洪任諭 <pcman.tw@gmail.com> 简体中文: 江云帆 <jyf1987@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid ""
+"\n"
+"Visit http://lxde.org/ for detail.\n"
+"\n"
+msgstr ""
+"\n"
+"详细信息请参考 http://lxde.org/\n"
+"\n"
+
+msgid " --configure -- launch configuration utility\n"
+msgstr " --configure -- 执行设置工具\n"
+
+msgid " --help      -- print this help and exit\n"
+msgstr " --help      -- 显示使用说明并离开\n"
+
+msgid " --log <number> -- set log level 0-5. 0 - none 5 - chatty\n"
+msgstr " --log <數值>   -- 设置程序运行日志的级别 (0-5). 0 - 无, 5 - 全部\n"
+
+msgid " --profile name -- use specified profile\n"
+msgstr " --profile name -- 指定使用其他设置文件\n"
+
+msgid " --version   -- print version and exit\n"
+msgstr " --version   -- 显示版本信息并离开\n"
+
+msgid " -C  -- same as --configure\n"
+msgstr " -C  -- 和 --configure 作用相同\n"
+
+msgid " -h  -- same as --help\n"
+msgstr " -h  -- 和 --help 作用相同\n"
+
+msgid " -p  -- same as --profile\n"
+msgstr " -p  -- 和 --profile 作用相同\n"
+
+msgid " -v  -- same as --version\n"
+msgstr " -v  -- 和 --version 作用相同\n"
+
+msgid "\"%s\" Settings"
+msgstr "设置 \"%s\""
+
+msgid "%lu packet"
+msgid_plural "%lu packets"
+msgstr[0] "%lu 封包"
+msgstr[1] ""
+
+msgid "0%"
+msgstr "0%"
+
+msgid "<Hidden Access Point>"
+msgstr "<隐藏的无线节点>"
+
+msgid "<Space>"
+msgstr "<空白分隔>"
+
+msgid "<b>Activity</b>"
+msgstr "<b>活动</b>"
+
+msgid "<b>Background</b>"
+msgstr "<b>背景</b>"
+
+msgid "<b>Connection</b>"
+msgstr "<b>连接</b>"
+
+msgid "<b>Font</b>"
+msgstr "<b>字体</b>"
+
+msgid "<b>Internet Protocol (IPv4)</b>"
+msgstr "<b>网络协议 (IPv4)</b>"
+
+msgid "<b>Internet Protocol (IPv6)</b>"
+msgstr "<b>网络协议 (IPv6)</b>"
+
+msgid "<b>Network Device</b>"
+msgstr "<b>网络设备</b>"
+
+msgid "<b>Position</b>"
+msgstr "<b>位置</b>"
+
+msgid "<b>Properties</b>"
+msgstr "<b>属性</b>"
+
+msgid "<b>Set Preferred Applications</b>"
+msgstr "<b>设定偏好使用的程序</b>"
+
+msgid "<b>Signal Strength</b>"
+msgstr "<b>信号强度</b>"
+
+msgid "<b>Size</b>"
+msgstr "<b>大小</b>"
+
+msgid "Accept SkipPager"
+msgstr "接受 SkipPager Hint"
+
+msgid "Accessories"
+msgstr "附属应用程序"
+
+msgid "Action"
+msgstr "动作"
+
+msgid "Activity"
+msgstr "活动"
+
+msgid "Add / Remove Panel Items"
+msgstr "新增/移除 面板項目"
+
+msgid "Add Button"
+msgstr "新增按钮"
+
+msgid "Add a separator to the panel"
+msgstr "在面板上增加分隔线"
+
+msgid "Add plugin to panel"
+msgstr "新增插件到面板"
+
+msgid "Address:"
+msgstr "地址："
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Alarm command"
+msgstr "发出警告时要执行的命令"
+
+msgid "Alarm time (minutes left)"
+msgstr "电池剩余时间低于此数值时警告 （分钟）"
+
+msgid "Alignment:"
+msgstr "排列方式："
+
+msgid "All workspaces"
+msgstr "所有工作区"
+
+msgid "Allocate space"
+msgstr "配置空间"
+
+msgid "Application Launch Bar"
+msgstr "应用程序启动栏"
+
+msgid "Audio & Video"
+msgstr "影音多媒体"
+
+msgid "Available plugins"
+msgstr "可选用的插件"
+
+msgid "Background color"
+msgstr "背景颜色"
+
+msgid "Bar with buttons to launch application"
+msgstr "具有应用程序启动按钮的工具栏"
+
+msgid "Battery Monitor"
+msgstr "电池电量显示"
+
+msgid "Battery: %d%% charged"
+msgstr "电池：剩余电量 %d%%"
+
+msgid "Battery: %d%% charged, %d:%02d left"
+msgstr "电池：剩余电量 %d%%，剩余可用时间 %d:%02d"
+
+msgid "Battery: %d%% charged, %d:%02d until full"
+msgstr "电池：剩余电量 %d%%，充满尚需 %d:%02d"
+
+msgid "Battery: %d%% charged, %s"
+msgstr "电池：剩余电量 %d%%，%s"
+
+msgid "Bold font"
+msgstr "粗体"
+
+msgid "Border width"
+msgstr "边框宽度"
+
+msgid "Bottom"
+msgstr "底部"
+
+msgid "Broadcast:"
+msgstr "广播地址："
+
+msgid "Browse directory tree via menu (Author: PCMan)"
+msgstr "使用树型浏览目录 (作者：PCMan)"
+
+msgid "Button Properties"
+msgstr "按钮树型"
+
+msgid "Buttons"
+msgstr "按钮"
+
+msgid "CPU Usage Monitor"
+msgstr "CPU 使用监视器"
+
+msgid "Charging color 1"
+msgstr "充电显示颜色 1"
+
+msgid "Charging color 2"
+msgstr "充电显示颜色 2"
+
+msgid "Clock Format"
+msgstr "时钟格式"
+
+msgid "Close Window"
+msgstr "关闭窗口"
+
+msgid "Command line options:\n"
+msgstr "命令行选项：\n"
+
+msgid "Con_figure"
+msgstr "设置(_F)"
+
+msgid "Config tool"
+msgstr "设置工具"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Connection Properties"
+msgstr "连接属性"
+
+msgid "Connection Properties: %s"
+msgstr "连接属性 %s"
+
+msgid "Connection has limited or no connectivity"
+msgstr "连接受限或无法连接"
+
+msgid "Create New Panel"
+msgstr "建立新面板"
+
+msgid "Currently loaded plugins"
+msgstr "目前载入的插件"
+
+msgid "Custom Color"
+msgstr "自定义颜色"
+
+msgid "Delete This Panel"
+msgstr "删除此面板"
+
+msgid "Desktop No / Workspace Name"
+msgstr "桌面编号 / 工作区名称"
+
+msgid "Desktop Pager"
+msgstr "切换桌面"
+
+msgid "Destination:"
+msgstr "目的地："
+
+msgid "Development"
+msgstr "程序开发"
+
+msgid "Digital Clock"
+msgstr "数字时钟"
+
+msgid "Directory Menu"
+msgstr "目录菜单"
+
+msgid "Disable"
+msgstr "禁止"
+
+msgid "Discharging color 1"
+msgstr "放电显示颜色 1"
+
+msgid "Discharging color 2"
+msgstr "放电显示颜色 2"
+
+msgid "Dispaly Image and Tooltip"
+msgstr "显示图片与工具提示"
+
+msgid "Display CPU usage"
+msgstr "显示 CPU 资源使用量"
+
+msgid "Display Digital clock and Tooltip"
+msgstr "显示数字时钟及在工具提示中显示日期"
+
+msgid "Display battery status using ACPI"
+msgstr "通过 ACPI 显示电池状态"
+
+msgid "Display workspace number, by cmeury@users.sf.net"
+msgstr "显示工作区编号，由 cmeury@users.sf.net 编写"
+
+msgid ""
+"Dynamic\n"
+"Pixels\n"
+"% Percent"
+msgstr ""
+"动态\n"
+"像素 (pixels)\n"
+"% 百分比"
+
+msgid "Edge:"
+msgstr "吸附边缘："
+
+msgid "Education"
+msgstr "教育"
+
+msgid "Enable Image:"
+msgstr "启用背景图："
+
+msgid "Enable Transparency"
+msgstr "启动透明效果"
+
+msgid "Encryption Key:"
+msgstr "密钥："
+
+msgid "Enter the command you want to execute:"
+msgstr "输入您想要执行的命令："
+
+msgid "Failed to launch time configuration tool: %s"
+msgstr "执行设置工具 %s 失败"
+
+msgid "File Manager:"
+msgstr "文件管理者："
+
+msgid "Flash when there is any window requiring attention"
+msgstr "当有窗口要求用户注意时，闪烁面板"
+
+msgid "Flat Buttons"
+msgstr "平面按钮"
+
+msgid "Game"
+msgstr "游戏"
+
+msgid "General"
+msgstr "一般"
+
+msgid "Graphics"
+msgstr "绘图"
+
+msgid "HW Address:"
+msgstr "实体地址："
+
+msgid "Height:"
+msgstr "高度："
+
+msgid "Hide if there is no battery"
+msgstr "没有电池时隐藏"
+
+msgid "IP Address:"
+msgstr "IP 地址："
+
+msgid "Iconify"
+msgstr "最小化"
+
+msgid "Icons only"
+msgstr "只显示图标"
+
+msgid "Indicators for CapsLock, NumLock, and ScrollLock keys"
+msgstr "显示 CapsLock、NumLock、及 ScrollLock 键的状态"
+
+msgid "Interface"
+msgstr "界面"
+
+msgid "Interface to monitor"
+msgstr "要监控的界面"
+
+msgid "Keyboard Led"
+msgstr "键盘灯号"
+
+msgid "Left"
+msgstr "左"
+
+msgid ""
+"Left\n"
+"Center\n"
+"Right"
+msgstr ""
+"靠左\n"
+"置中\n"
+"靠右"
+
+msgid ""
+"Left\n"
+"Right\n"
+"Top\n"
+"Bottom"
+msgstr ""
+"左\n"
+"右\n"
+"上\n"
+"下"
+
+msgid "Left click to iconify all windows. Middle click to shade them"
+msgstr "按左键最小化所有窗口 / 中键折叠所有窗口"
+
+msgid "Logout"
+msgstr "退出"
+
+msgid "Logout Command:"
+msgstr "退出命令："
+
+msgid "Logout command is not set"
+msgstr "退出命令尚未设置"
+
+msgid "Make window managers treat the panel as dock"
+msgstr "让窗口管理程序将面板当成 Dock 处理"
+
+msgid "Margin:"
+msgstr "留空："
+
+msgid "Max width of task button"
+msgstr "面板按钮最大宽度"
+
+msgid "Maximize"
+msgstr "最大化"
+
+msgid "Menu"
+msgstr "菜单"
+
+msgid "Minimize All Windows"
+msgstr "最小化所有窗口"
+
+msgid "Monitor network status"
+msgstr "监视网络状态"
+
+msgid "Move to Workspace"
+msgstr "移动到工作区"
+
+msgid "Mute"
+msgstr "静音"
+
+msgid "Net Status Monitor"
+msgstr "网络状态监视器"
+
+msgid "Netmask:"
+msgstr "子网掩码："
+
+msgid "Network"
+msgstr "网络"
+
+msgid "Network Connection"
+msgstr "网络连接"
+
+msgid "Network Connection: %s"
+msgstr "网络连接：%s"
+
+msgid "Network cable is plugged out"
+msgstr "网络连接被拔出"
+
+msgid "No batteries found"
+msgstr "没有电池"
+
+msgid "None (Use system theme)"
+msgstr "无 (使用系统主题)"
+
+msgid "Office"
+msgstr "办公软件"
+
+msgid "Old KDE/GNOME Tray"
+msgstr "KDE/GNOME 托盘"
+
+msgid "Open in _Terminal"
+msgstr "在终端中打开(_T)"
+
+msgid "Orientation"
+msgstr "方向"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "Panel"
+msgstr "面板"
+
+msgid "Panel Applets"
+msgstr "面板组件"
+
+msgid "Panel Preferences"
+msgstr "面板偏好设置"
+
+msgid "Panel Settings"
+msgstr "设置面板"
+
+msgid "Pixels"
+msgstr "像素 (pixels)"
+
+msgid ""
+"Please contact your system administrator to resolve the following problem:\n"
+"\n"
+"%s"
+msgstr ""
+"请联系您的系统管理员解决下列问题：\n"
+"\n"
+"%s"
+
+msgid "Protocol:"
+msgstr "通信协议："
+
+msgid "Provide Menu"
+msgstr "提供菜单"
+
+msgid "Raise"
+msgstr "移到最上层"
+
+msgid ""
+"Really delete this panel?\n"
+"<b>Warning: This can not be recovered.</b>"
+msgstr ""
+"确定要删除此面板？\n"
+"<b>警告： 此动作将无法还原。</b>"
+
+msgid "Received"
+msgstr "已接收"
+
+msgid "Received:"
+msgstr "接收："
+
+msgid "Remote IP:"
+msgstr "远程 IP 地址："
+
+msgid "Remove \"%s\" From Panel"
+msgstr "从面板移除 \"%s\""
+
+msgid "Remove Button"
+msgstr "移除按钮"
+
+msgid "Repair"
+msgstr "修复连接"
+
+msgid "Reserve space, and not covered by maximized windows"
+msgstr "保留空间，不被最大化窗口覆盖"
+
+msgid "Restart"
+msgstr "重新启动"
+
+msgid "Restore"
+msgstr "还原"
+
+msgid "Right"
+msgstr "右"
+
+msgid "Run"
+msgstr "执行"
+
+msgid "Scope:"
+msgstr "范围："
+
+msgid "Select Application"
+msgstr "选择应用程序"
+
+msgid "Select an image file"
+msgstr "选择图片文件"
+
+msgid ""
+"Sends commands to all desktop windows.\n"
+"Supported commnds are 1)toggle iconify and 2) toggle shade"
+msgstr ""
+"发送命令给所有桌面窗口\n"
+"支持的命令  1) 最小化  2) 折叠"
+
+msgid "Sent"
+msgstr "已发送"
+
+msgid "Sent:"
+msgstr "发送："
+
+msgid "Separator"
+msgstr "分隔线"
+
+msgid "Setting Encryption Key"
+msgstr "设置密钥"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Show Iconified windows"
+msgstr "显示最小化的窗口"
+
+msgid "Show Signal"
+msgstr "显示信号"
+
+msgid "Show mapped windows"
+msgstr "显示已映射的窗口"
+
+msgid "Show tooltips"
+msgstr "显示工具提示"
+
+msgid "Show windows from all desktops"
+msgstr "显示来自所有桌面的窗口"
+
+msgid "Simple pager plugin"
+msgstr "简易桌面切换插件"
+
+msgid "Size"
+msgstr "大小"
+
+msgid "Spacing"
+msgstr "间距"
+
+msgid "Status:"
+msgstr "状态："
+
+msgid "Stretch"
+msgstr "延展"
+
+msgid "Subnet Mask:"
+msgstr "子网掩码："
+
+msgid "Support"
+msgstr "支持"
+
+msgid "System Tools"
+msgstr "系统工具"
+
+msgid "System Tray"
+msgstr "系统托盘 (通知区域)"
+
+msgid "Task Bar (Window List)"
+msgstr "面板 (窗口列表)"
+
+msgid ""
+"Taskbar shows all opened windows and allow to iconify them, shade or get "
+"focus"
+msgstr "面板显示所有打开的窗口，并让窗口能最小化、折叠、或取得焦点"
+
+msgid "Terminal Emulator:"
+msgstr "终端："
+
+msgid "The current interface the icon is monitoring."
+msgstr "目前正在监控的界面"
+
+msgid "The orientation of the tray."
+msgstr "系统托盘的排列方向"
+
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"显示说明时发生错误：\n"
+"%s"
+
+msgid ""
+"This wireless network was encrypted.\n"
+"You must have the encryption key."
+msgstr ""
+"此连接已加密\n"
+"您必须要有密钥。"
+
+msgid "Tint color:"
+msgstr "色彩："
+
+msgid "Tooltip Format"
+msgstr "工具提示格式"
+
+msgid "Tooltips Enabled"
+msgstr "显示工具提示"
+
+msgid "Top"
+msgstr "上"
+
+msgid "Type:"
+msgstr "类别："
+
+msgid "Unknown"
+msgstr "未知"
+
+msgid "Use mouse wheel"
+msgstr "使用鼠标滚轮"
+
+msgid "Volume"
+msgstr "音量"
+
+msgid "Volume Control"
+msgstr "音量控制"
+
+msgid "Volume control"
+msgstr "音量控制"
+
+msgid "Where to put the panel?"
+msgstr "要把面板放到哪里？"
+
+msgid "Whether or not the icon's tooltips are enabled."
+msgstr "是否使用图片的工具提示"
+
+msgid "Whether or not the signal strength should be displayed."
+msgstr "是否显示信号强度"
+
+msgid "Width:"
+msgstr "宽度："
+
+msgid "Wireless"
+msgstr "无线网络"
+
+msgid "Wireless Networks not found in range"
+msgstr "范围内找不到无线网络"
+
+msgid "Workspace %d"
+msgstr "工作区 %d"
+
+msgid "_Name:"
+msgstr "名称(_N)："
+
+msgid "bytes"
+msgstr "字节组"
+
+msgid "charging"
+msgstr "充电中"
+
+msgid "charging finished"
+msgstr "充电完成"
+
+msgid "lxpanel %s - lightweight GTK2+ panel for UNIX desktops\n"
+msgstr "lxpanel %s - UNIX 桌面的轻量级 GTK2+ 面板\n"
+
+msgid "not charging"
+msgstr "未充电"
+
+msgid "packets"
+msgstr "封包"

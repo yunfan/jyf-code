@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="topic.xsl"?>
+<page>
+	<title>Pinbb论坛</title>
+	<desc>简单既美</desc>
+	<menu>
+		<item>
+			<name>首页</name>
+			<href><![CDATA[xx]]></href>
+		</item>
+		<item>
+			<name>登录</name>
+			<href><![CDATA[index.php?act=login]]></href>
+		</item>
+		<item>
+			<name>注册</name>
+			<href><![CDATA[index.php?act=reg]]></href>
+		</item>
+	</menu>
+	<message>
+		<total>
+			<user>999</user>
+			<topic>345</topic>
+			<post>1023</post>
+		</total>
+		<today>
+			<user>9</user>
+			<topic>11</topic>
+			<post>23</post>
+		</today>
+		<author>
+			<name>jyf1987</name>
+			<href><![CDATA[http://hi.baidu.com/jyf1987]]></href>
+			<contact>mailto:jyf1987@gmail.com</contact>
+			<time>2009-06-06</time>
+		</author>
+	</message>
+</page>

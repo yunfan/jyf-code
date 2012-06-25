@@ -1,0 +1,5 @@
+add  添加留言
+del  删除留言
+reply 回复留言
+show 显示留言
+install 安装

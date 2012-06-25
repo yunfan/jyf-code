@@ -1,0 +1,41 @@
+// dot -Tpng tree.dot > tree.png
+digraph G {
+    node [style=filled];
+    a [fillcolor=red];
+    b [fillcolor=red];
+    c [fillcolor=red];
+    d [fillcolor=red];
+
+    e0 [fillcolor=yellow];
+    f0 [fillcolor=yellow];
+    g0 [fillcolor=yellow];
+    h0 [fillcolor=yellow];
+
+    i0 [fillcolor=blue];
+    i0 [fillcolor=green];
+
+    e1 [fillcolor=gray];
+    f1 [fillcolor=gray];
+
+    g10 [fillcolor=blue];
+    g11 [fillcolor=green];
+
+    a -> b;
+    b -> c;
+    c -> d;
+    d -> e0;
+    d -> e1;
+
+    e0 -> f0;
+    f0 -> g0;
+    g0 -> h0;
+    h0 -> i0;
+    h0 -> i1;
+
+    e1 -> f1;
+    f1 -> g10;
+    f1 -> g11;
+
+    {rank=same; e0; e1;};
+    {rank=same; g0; g10; g11;};
+}

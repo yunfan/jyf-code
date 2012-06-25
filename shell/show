@@ -1,0 +1,3 @@
+#!/bin/sh
+## this is an script to show the detail of webservice method in c# code file
+cat ws_PhotoManage.asmx.cs | sed -n '/WebMethod/,/public[^)]\+)/p' | sed 's/\(\s\+\)\[WebMethod([^=]\+)=\s\+\"\([^"]\+\)\"\]/\2/' | sed 's/\(\s\+\)[^ ]\+\s\+[^ ]\+\([^(]\+\).\+/\1\2/' | sed 's/\s\+"\([^"]\+\)".\+/\1/' | sed '/^[^ ]/{N;s/\n/ | /}' | cat -n  | sed 's/\s|\s/\n/g' | sed 's/^\s\+//;s/\([0-9]\+\)\s\+/\1,/' | sed 's/^\([a-zA-Z]\+\)/    \1/'

@@ -1,0 +1,17 @@
+说明
+    我本人只在xubuntu 9.04 基础上安装的lxde环境下测试过
+    故只对此平台质量负责
+
+使用说明
+    复制 相关的 .mo  文件至系统的locale文件夹
+
+    一般来说是  /usr/share/locale/zh_CN/LC_MESSAGES/ 下
+    然后？ 然后就ok了 貌似重登录都不用
+
+关于我
+    江云帆 
+    jyf1987@gmail.com <gtalk+++>
+    http://hi.baidu.com/jyf1987
+    Lua,python,php,perl,ajax
+
+    2009-07-06

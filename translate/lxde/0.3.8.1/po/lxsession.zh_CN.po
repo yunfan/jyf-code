@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-01 21:08+0800\n"
+"PO-Revision-Date: 2008-03-01 21:09+0800\n"
+"Last-Translator: 洪任諭 <pcman.tw@gmail.com> 简体中文: 江云帆 <jyf1987@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "<b><big>Logout %s session?</big></b>"
+msgstr "<b><big>退出 %s 登录状态？</big></b>"
+
+msgid "Banner to show on the dialog"
+msgstr "显示在对话框上的图片"
+
+msgid "Custom message to show on the dialog"
+msgstr "显示在对话框上的自定义信息"
+
+msgid "Error: %s\n"
+msgstr "错误：%s\n"
+
+msgid "LXSession is not running."
+msgstr "LXSession 并未运行"
+
+msgid "Logout"
+msgstr "退出"
+
+msgid "Position of the banner"
+msgstr "显示图片的位置"
+
+msgid "S_witch User"
+msgstr "切换用户(_W)"
+
+msgid "Save current session"
+msgstr "储存当前的登录状态"
+
+msgid "Sh_utdown"
+msgstr "关机(_U)"
+
+msgid "_Hibernate"
+msgstr "休眠(_H)"
+
+msgid "_Logout"
+msgstr "退出(_L)"
+
+msgid "_Reboot"
+msgstr "重新启动(_R)"
+
+msgid "_Suspend"
+msgstr "暂停_S)"
+
+msgid "image file"
+msgstr "图片文件"
+
+msgid "message"
+msgstr "信息"
