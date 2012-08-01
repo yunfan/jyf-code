@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<title>个人简历</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7056 2011-06-17 10:50:48Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="id1">
+<h1 class="title">个人简历</h1>
+
+<div class="contents topic" id="id2">
+<p class="topic-title first">目录</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#id3" id="id12">1&nbsp;&nbsp;&nbsp;基本信息</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id4" id="id13">1.1&nbsp;&nbsp;&nbsp;个人</a></li>
+<li><a class="reference internal" href="#id5" id="id14">1.2&nbsp;&nbsp;&nbsp;教育</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6" id="id15">2&nbsp;&nbsp;&nbsp;从业经历</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id7" id="id16">2.1&nbsp;&nbsp;&nbsp;杭州汇文教育</a></li>
+<li><a class="reference internal" href="#id8" id="id17">2.2&nbsp;&nbsp;&nbsp;游艺星际(北京)科技有限公司</a></li>
+<li><a class="reference internal" href="#id9" id="id18">2.3&nbsp;&nbsp;&nbsp;果壳传媒(北京果壳互动科技传媒有限公司)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10" id="id19">3&nbsp;&nbsp;&nbsp;技术信息</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id11" id="id20">3.1&nbsp;&nbsp;&nbsp;个人兴趣</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h1><a class="toc-backref" href="#id12">1&nbsp;&nbsp;&nbsp;基本信息</a></h1>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id13">1.1&nbsp;&nbsp;&nbsp;个人</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>姓名</td>
+<td>江云帆</td>
+</tr>
+<tr><td>性别</td>
+<td>男</td>
+</tr>
+<tr><td>出生日期</td>
+<td>1987/03</td>
+</tr>
+<tr><td>籍贯</td>
+<td>安徽省黄山市</td>
+</tr>
+<tr><td>从业年限</td>
+<td>2008/02至今</td>
+</tr>
+<tr><td>电子邮箱</td>
+<td><a class="reference external" href="mailto:jyf1987+job&#64;gmail.com">jyf1987+job&#64;gmail.com</a></td>
+</tr>
+<tr><td>个人博客</td>
+<td><a class="reference external" href="http://geek42.info/">http://geek42.info/</a></td>
+</tr>
+<tr><td>移动电话</td>
+<td>18601235571</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id14">1.2&nbsp;&nbsp;&nbsp;教育</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>起止日期</td>
+<td>2005/09 - 2009/05</td>
+</tr>
+<tr><td>学历</td>
+<td>大学本科</td>
+</tr>
+<tr><td>学院</td>
+<td>浙江传媒学院</td>
+</tr>
+<tr><td>专业</td>
+<td>公共事业管理(媒介经营发展方向)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id6">
+<h1><a class="toc-backref" href="#id15">2&nbsp;&nbsp;&nbsp;从业经历</a></h1>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id16">2.1&nbsp;&nbsp;&nbsp;杭州汇文教育</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>迄止日期</td>
+<td>2008/02 - 2009/05</td>
+</tr>
+<tr><td>所属行业</td>
+<td>教育培训</td>
+</tr>
+<tr><td>所属部门</td>
+<td>软件研发部</td>
+</tr>
+<tr><td>所属岗位</td>
+<td>软件工程师(PHP)</td>
+</tr>
+<tr><td>工作内容</td>
+<td>网站开发, 服务器维护[ecshop,supercms二次开发]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id17">2.2&nbsp;&nbsp;&nbsp;游艺星际(北京)科技有限公司</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>迄止日期</td>
+<td>2009/06 - 2010/01</td>
+</tr>
+<tr><td>所属行业</td>
+<td>网络游戏</td>
+</tr>
+<tr><td>所属部门</td>
+<td>后端开发</td>
+</tr>
+<tr><td>所属岗位</td>
+<td>后端研发工程师(Python)</td>
+</tr>
+<tr><td>工作内容</td>
+<td>服务器后端开发[投票，彩信，邮件批量，订阅等模块]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id18">2.3&nbsp;&nbsp;&nbsp;果壳传媒(北京果壳互动科技传媒有限公司)</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>迄止日期</td>
+<td>2010/01 - 当前</td>
+</tr>
+<tr><td>所属行业</td>
+<td>互联网站点</td>
+</tr>
+<tr><td>所属部门</td>
+<td>研发部</td>
+</tr>
+<tr><td>所属岗位</td>
+<td>高级Python开发工程师</td>
+</tr>
+<tr><td>工作内容</td>
+<td>Web后端接口研发，架构研究与优化</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id10">
+<h1><a class="toc-backref" href="#id19">3&nbsp;&nbsp;&nbsp;技术信息</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>scm tool</td>
+<td>svn, hg</td>
+</tr>
+<tr><td>database</td>
+<td>postgresql, mongodb</td>
+</tr>
+<tr><td>lang</td>
+<td>php, python, lua, forth</td>
+</tr>
+<tr><td>repo</td>
+<td><a class="reference external" href="http://jyf-code.googlecode.com/">http://jyf-code.googlecode.com/</a>, <a class="reference external" href="http://hg.geek42.info/">http://hg.geek42.info/</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id11">
+<h2><a class="toc-backref" href="#id20">3.1&nbsp;&nbsp;&nbsp;个人兴趣</a></h2>
+<img alt="i.png" src="i.png" />
+</div>
+</div>
+</div>
+</body>
+</html>
