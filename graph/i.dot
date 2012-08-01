@@ -1,0 +1,79 @@
+digraph G {
+    graph [overlap=false,pack=true,bgcolor="#1F1F1F"];
+    node [style=filled,fontname="wqy-zenhei",fontsize=11];
+
+    兴趣 [center=true,fillcolor="#6699FF"];
+
+    node [fillcolor="#66FFCC"];
+    兴趣 -> 历史;
+        历史 -> 断代史;
+            node [fillcolor="#7AFF95",fontcolor="#FF11DD"];
+            断代史 -> 先秦史;
+            断代史 -> 魏晋南北朝史;
+            断代史 -> 五代十国史;
+            断代史 -> 明末史;
+            断代史 -> 清末民国史;
+            断代史 -> 红朝史;
+            node [fillcolor="#66FFCC",fontcolor="#660033"];
+        历史 -> 族群史;
+            node [fillcolor="#3DFF64",fontcolor="#000000"];
+            族群史 -> 中国古代民族史;
+            族群史 -> 中国南方民族史;
+            族群史 -> 波利尼西亚史;
+            族群史 -> 印尼诸岛史;
+            族群史 -> 马来史;
+            族群史 -> 东南亚华人史;
+            族群史 -> 日本史;
+            node [fillcolor="#66FFCC"];
+        历史 -> 专门史;
+            node [fillcolor="#4DFF00"];
+            专门史 -> 海上交流史;
+            专门史 -> 人口迁移史;
+                人口迁移史 -> 国内迁移;
+                人口迁移史 -> 海外迁移;
+            专门史 -> 作乱;
+                作乱 -> 暴动;
+                作乱 -> 哗变;
+                作乱 -> 割据;
+                作乱 -> 怪力乱神;
+            专门史 -> 非主流群体;
+                非主流群体 -> 墨家学派;
+                非主流群体 -> 隐士;
+                非主流群体 -> 秘密宗教;
+
+    node [fillcolor="#FF00CC"];
+    兴趣 -> 计算机;
+        计算机 -> 编程语言;
+            node [fillcolor="#FF3DD8"];
+            编程语言 -> python;
+            编程语言 -> c;
+            编程语言 -> asm;
+                asm -> x86;
+                asm -> mips;
+                asm -> arm;
+            编程语言 -> lua;
+            编程语言 -> forth;
+            编程语言 -> lisp;
+            编程语言 -> js;
+            编程语言 -> java;
+            编程语言 -> sql;
+        node [fillcolor="#FF00CC"];
+        计算机 -> 算法;
+        计算机 -> 编译原理;
+        计算机 -> 计算机原理;
+        计算机 -> 操作系统;
+
+    node [fillcolor="#FFB300"];
+    兴趣 -> 音乐;
+        音乐 -> 古琴;
+        音乐 -> 乐理;
+        音乐 -> 作曲;
+        音乐 -> 电子合成;
+
+    node [fillcolor="#FF3300"];
+    兴趣 -> 物理学;
+    node [fillcolor="#CCFF00"];
+    兴趣 -> 生物学;
+    node [fillcolor="#FF7AE4"];
+    兴趣 -> 数学;
+}
