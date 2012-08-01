@@ -3,7 +3,7 @@
 from group import Group
 
 ##groups = ['beijingzufang', ]
-groups = ['276176', '262626', '26926', '42745', 'sweethome']
+groups = ['beijingzufang', '276176', '262626', '26926', '42745', 'sweethome']
 
 for g_code in groups:
     g = Group(g_code)
